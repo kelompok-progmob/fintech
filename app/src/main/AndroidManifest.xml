@@ -11,6 +11,10 @@
         android:theme="@style/AppTheme">
         <activity android:name=".LoginActivity"></activity>
         <activity android:name=".TopUpActivity"></activity>
+        <activity android:name=".QRGeneratorActivity">
+
+        </activity>
+
         <activity android:name=".MerchantActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
