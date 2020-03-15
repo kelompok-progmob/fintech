@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "393452911471",
+    "firebase_url": "https://fintech-koperasi.firebaseio.com",
+    "project_id": "fintech-koperasi",
+    "storage_bucket": "fintech-koperasi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:393452911471:android:265eac5c50a25c73d1469a",
+        "android_client_info": {
+          "package_name": "com.tyga.fintech"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "393452911471-807p7mskobo1jpcn6e6809r1rhuru5fo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tyga.fintech",
+            "certificate_hash": "4b97c027923cf247a06e3044404d8e6aa2347a63"
+          }
+        },
+        {
+          "client_id": "393452911471-a6q7fbrgk72s684kh4bvi0vjhmj6q5uf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmj5i4zoSAvAI52Ua57-N890Y2hD8cSpk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "393452911471-a6q7fbrgk72s684kh4bvi0vjhmj6q5uf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
