@@ -5,20 +5,29 @@ import android.os.Parcelable;
 
 public class Merchant implements Parcelable {
 
-    private String id_merchant, id_lpd, id_mapping_merchant,nama,alamat,no_rek_merchant;
+    private String id_merchant, id_lpd, id_mapping_merchant,nama,alamat,deskripsi,no_rek_merchant;
     private double total_saldo;
 
     public Merchant() {
     }
 
-    public Merchant(String id_merchant, String id_lpd, String id_mapping_merchant, String nama, String alamat, String no_rek_merchant, double total_saldo) {
+    public Merchant(String id_merchant, String id_lpd, String id_mapping_merchant, String nama, String alamat, String deskripsi, String no_rek_merchant, double total_saldo) {
         this.id_merchant = id_merchant;
         this.id_lpd = id_lpd;
         this.id_mapping_merchant = id_mapping_merchant;
         this.nama = nama;
         this.alamat = alamat;
+        this.deskripsi = deskripsi;
         this.no_rek_merchant = no_rek_merchant;
         this.total_saldo = total_saldo;
+    }
+
+    public String getDeskripsi() {
+        return deskripsi;
+    }
+
+    public void setDeskripsi(String deskripsi) {
+        this.deskripsi = deskripsi;
     }
 
     public String getId_mapping_merchant() {
@@ -90,6 +99,7 @@ public class Merchant implements Parcelable {
         dest.writeString(this.id_lpd) ;
         dest.writeString(this.id_mapping_merchant) ;
         dest.writeString(this.no_rek_merchant) ;
+        dest.writeString(this.deskripsi) ;
         dest.writeDouble(this.total_saldo);
     }
 
@@ -98,6 +108,7 @@ public class Merchant implements Parcelable {
         this.id_merchant = in.readString();
         this.nama = in.readString();
         this.alamat = in.readString();
+        this.deskripsi= in.readString();
         this.id_lpd = in.readString();
         this.id_mapping_merchant = in.readString();
         this.no_rek_merchant = in.readString();

@@ -8,13 +8,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Toast;
 
-import com.tyga.fintech.adapter.MerchantAdapter;
+import com.tyga.fintech.adapter.PromoAdapter;
 import com.tyga.fintech.api.ApiClient;
 import com.tyga.fintech.api.ApiService;
-import com.tyga.fintech.model.Merchant;
+import com.tyga.fintech.model.Promo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,17 +22,18 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MerchantActivity extends AppCompatActivity {
+public class PromoActivity extends AppCompatActivity {
 
-    private List<Merchant> listMerchant = new ArrayList<>();
-    private RecyclerView mMerchantRv;
+    private List<Promo> listPromo = new ArrayList<>();
+    private RecyclerView mPromoRv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.merchant_activity);
+        //setContentView(R.layout.promo_activity);
         ActionBar ab = getSupportActionBar();
         if (ab != null){
-            ab.setTitle("Merchant");
+            ab.setTitle("Promo");
             ab.setDisplayHomeAsUpEnabled(true);
             ab.setDisplayShowHomeEnabled(true);
         }
@@ -44,12 +44,12 @@ public class MerchantActivity extends AppCompatActivity {
     private void callApi(String idLpd){
         ApiClient.getClient()
                 .create(ApiService.class)
-                .getMerchant(idLpd)
-                .enqueue(new Callback<List<Merchant>>() {
+                .getPromo(idLpd)
+                .enqueue(new Callback<List<Promo>>() {
                     @Override
-                    public void onResponse(Call<List<Merchant>> call, Response<List<Merchant>> response) {
+                    public void onResponse(Call<List<Promo>> call, Response<List<Promo>> response) {
                         if (response.body() != null){
-                            listMerchant = response.body();
+                            listPromo = response.body();
                             settingRecyclerView();
                         }
                         else{
@@ -58,26 +58,26 @@ public class MerchantActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onFailure(Call<List<Merchant>> call, Throwable t) {
+                    public void onFailure(Call<List<Promo>> call, Throwable t) {
                         Toast.makeText(getApplicationContext(),"Failed get data, check your connection!!",Toast.LENGTH_SHORT).show();
-                        Log.e("error call api merchant",t.toString()+" dan message = "+t.getMessage());
+                        Log.e("error call api promo",t.toString()+" dan message = "+t.getMessage());
                     }
                 });
     }
 
     private void settingRecyclerView(){
-//        mMerchantRv = findViewById(R.id.);
-        mMerchantRv.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        MerchantAdapter merchantAdapter = new MerchantAdapter(this, new MerchantAdapter.OnItemClickListener() {
+//        mPromoRv = findViewById(R.id.);
+        mPromoRv.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        PromoAdapter promoAdapter = new PromoAdapter(this, new PromoAdapter.OnItemClickListener() {
             @Override
-            public void onItemClick(Merchant merchant) {
-                Intent intent = new Intent(getApplicationContext(), DetailMerchantActivity.class);
-                intent.putExtra("merchant", merchant);
+            public void onItemClick(Promo promo) {
+                Intent intent = new Intent(getApplicationContext(), DetailPromoActivity.class);
+                intent.putExtra("promo", promo);
                 startActivity(intent);
             }
         });
-        merchantAdapter.setListMerchant(listMerchant);
-        mMerchantRv.setAdapter(merchantAdapter);
+        promoAdapter.setListPromo(listPromo);
+        mPromoRv.setAdapter(promoAdapter);
     }
 
     @Override
