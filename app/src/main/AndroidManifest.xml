@@ -23,16 +23,16 @@
         <activity android:name=".MerchantActivity" />
         <activity android:name=".QRGeneratorActivity" />
         <activity android:name=".MainActivity">
-
-        </activity>
-        <activity android:name=".DetailPromoActivity" />
-        <activity android:name=".PromoActivity" />
-        <activity android:name=".DetailMerchantActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".DetailPromoActivity" />
+        <activity android:name=".PromoActivity" />
+        <activity android:name=".DetailMerchantActivity" >
+
         </activity>
 
         <meta-data
