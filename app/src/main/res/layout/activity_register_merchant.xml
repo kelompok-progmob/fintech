@@ -4,20 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    tools:context=".RegisterMerchantActivity">
 
     <TextView
-        android:id="@+id/tv_nama_register"
+        android:id="@+id/tv_nama_merchant_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
-        android:text="Nama Lengkap"
+        android:text="Nama Merchant"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_thanks_register" />
 
     <EditText
-        android:id="@+id/et_nama_register"
+        android:id="@+id/et_nama_merchant_register"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -26,42 +26,42 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_nama_register" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_nama_merchant_register" />
 
     <TextView
-        android:id="@+id/tv_email_register"
+        android:id="@+id/tv_alamat_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:text="Email"
+        android:text="Alamat"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_nama_register" />
+        app:layout_constraintTop_toBottomOf="@+id/et_nama_merchant_register" />
 
     <EditText
-        android:id="@+id/et_email_register"
+        android:id="@+id/et_alamat_register"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:ems="10"
-        android:inputType="textEmailAddress"
+        android:inputType="textLongMessage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_email_register" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_alamat_register" />
 
     <TextView
-        android:id="@+id/tv_noHp_register"
+        android:id="@+id/tv_noHp_merchant_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:text="Nomor Ponsel"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_email_register" />
+        app:layout_constraintTop_toBottomOf="@+id/et_alamat_register" />
 
     <EditText
-        android:id="@+id/et_noHp_register"
+        android:id="@+id/et_noHp_merchant_register"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -70,20 +70,20 @@
         android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_noHp_register" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_noHp_merchant_register" />
 
     <TextView
-        android:id="@+id/tv_pin_register"
+        android:id="@+id/tv_pin_merchant_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:text="Nomor Pin"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_noHp_register" />
+        app:layout_constraintTop_toBottomOf="@+id/et_noHp_merchant_register" />
 
     <EditText
-        android:id="@+id/et_pin_register"
+        android:id="@+id/et_pin_merchant_register"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -92,7 +92,7 @@
         android:inputType="numberPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_pin_register" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_pin_merchant_register" />
 
     <TextView
         android:id="@+id/tv_thanks_register"
@@ -118,10 +118,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_register" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_merchant_register" />
 
     <Button
-        android:id="@+id/button_registrasi_register"
+        android:id="@+id/button_registrasi_merchant_register"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="55dp"
@@ -142,10 +142,10 @@
         android:layout_marginTop="16dp"
         android:text="Pilih LPD / Koperasi"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_pin_register" />
+        app:layout_constraintTop_toBottomOf="@+id/et_pin_merchant_register" />
 
     <Spinner
-        android:id="@+id/spinner_register"
+        android:id="@+id/spinner_merchant_register"
         android:layout_width="0dp"
         android:layout_height="100px"
         android:layout_marginStart="24dp"
