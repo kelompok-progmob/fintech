@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/NoActionBar">
-        <activity android:name=".RegisterMerchantActivity"></activity>
+        <activity android:name=".ProfileMerchantActivity"></activity>
+        <activity android:name=".RegisterMerchantActivity" />
         <activity android:name=".RegisterChooseActivity" />
         <activity android:name=".QRScannerActivity" />
         <activity android:name=".HistoryMerchantActivity" />
@@ -28,6 +29,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".DetailPromoActivity" />
+        <activity android:name=".PromoActivity" />
+        <activity android:name=".DetailMerchantActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
