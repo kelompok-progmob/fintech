@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.tyga.fintech.adapter.MerchantAdapter;
 import com.tyga.fintech.api.ApiClient;
 import com.tyga.fintech.api.ApiService;
+import com.tyga.fintech.api.TokenManager;
 import com.tyga.fintech.model.Merchant;
 
 import java.util.ArrayList;
@@ -24,6 +25,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MerchantActivity extends AppCompatActivity {
+
+    ApiService service;
+    TokenManager tokenManager;
 
     private List<Merchant> listMerchant = new ArrayList<>();
     private RecyclerView mMerchantRv;
@@ -42,8 +46,8 @@ public class MerchantActivity extends AppCompatActivity {
     }
 
     private void callApi(String idLpd){
-        ApiClient.getClient()
-                .create(ApiService.class)
+        service = ApiClient.createServiceWithAuth(ApiService.class, tokenManager, this);
+        service
                 .getMerchant(idLpd)
                 .enqueue(new Callback<List<Merchant>>() {
                     @Override

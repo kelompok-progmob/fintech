@@ -1,143 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".LoginActivity"
-    android:background="#108ee9">
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".LoginActivity"
+        android:background="#108ee9">
 
-    <TextView
-        android:id="@+id/tv_judul_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="U A N G"
-        android:textColor="@color/colorTextWhite"
-        android:textSize="50sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tv_judul_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="U A N G"
+            android:textColor="@color/colorTextWhite"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/et_phone_login"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="55dp"
-        android:background="@drawable/border_transparant"
-        android:ems="10"
-        android:hint="Phone Number"
-        android:inputType="phone"
-        android:textColor="@color/colorTextWhite"
-        android:textColorHint="@color/colorTextWhite"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_judul_login" />
+        <EditText
+            android:id="@+id/et_phone_login"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="55dp"
+            android:background="@drawable/border_transparant"
+            android:ems="10"
+            android:hint="Phone Number"
+            android:inputType="phone"
+            android:textColor="@color/colorTextWhite"
+            android:textColorHint="@color/colorTextWhite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_judul_login" />
 
-    <ImageView
-        android:id="@+id/iv_iconPhone_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/et_phone_login"
-        app:layout_constraintStart_toStartOf="@+id/et_phone_login"
-        app:layout_constraintTop_toTopOf="@+id/et_phone_login"
-        app:srcCompat="@drawable/ic_phone_white"
-        tools:ignore="VectorDrawableCompat" />
+        <ImageView
+            android:id="@+id/iv_iconPhone_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/et_phone_login"
+            app:layout_constraintStart_toStartOf="@+id/et_phone_login"
+            app:layout_constraintTop_toTopOf="@+id/et_phone_login"
+            app:srcCompat="@drawable/ic_phone_white"
+            tools:ignore="VectorDrawableCompat" />
 
-    <Button
-        android:id="@+id/button_signin_login"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="55dp"
-        android:background="@drawable/border_white_outline"
-        android:text="SIGN IN"
-        android:textColor="@color/colorTextWhite"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_phone_login" />
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="164dp"
+            android:layout_marginEnd="55dp"
+            android:background="@drawable/border_transparant"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColor="@color/colorTextWhite"
+            android:textColorHint="@color/colorTextWhite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_judul_login" />
 
-    <TextView
-        android:id="@+id/tv_or_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="OR"
-        android:textColor="@color/colorTextWhite"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_signin_login" />
+        <Button
+            android:id="@+id/button_signin_login"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="55dp"
+            android:background="@drawable/border_white_outline"
+            android:text="SIGN IN"
+            android:textColor="@color/colorTextWhite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/password" />
 
-    <ImageView
-        android:id="@+id/garis1"
-        android:layout_width="0dp"
-        android:layout_height="3px"
-        android:layout_marginStart="55dp"
-        android:layout_marginEnd="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_or_login"
-        app:layout_constraintEnd_toStartOf="@+id/tv_or_login"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_or_login"
-        app:srcCompat="@color/colorTextWhite" />
+        <TextView
+            android:id="@+id/tv_or_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="OR"
+            android:textColor="@color/colorTextWhite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_signin_login" />
 
-    <ImageView
-        android:id="@+id/garis2"
-        android:layout_width="0dp"
-        android:layout_height="3px"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="55dp"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_or_login"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_or_login"
-        app:layout_constraintTop_toTopOf="@+id/tv_or_login"
-        app:srcCompat="@color/colorTextWhite" />
+        <ImageView
+            android:id="@+id/garis1"
+            android:layout_width="0dp"
+            android:layout_height="3px"
+            android:layout_marginStart="55dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_or_login"
+            app:layout_constraintEnd_toStartOf="@+id/tv_or_login"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_or_login"
+            app:srcCompat="@color/colorTextWhite" />
 
-    <Button
-        android:id="@+id/button_joinNow_login"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="55dp"
-        android:text="JOIN NOW"
-        android:textColor="@color/colorPrimary"
-        android:background="@drawable/border_white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_or_login" />
+        <ImageView
+            android:id="@+id/garis2"
+            android:layout_width="0dp"
+            android:layout_height="3px"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="55dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_or_login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_or_login"
+            app:layout_constraintTop_toTopOf="@+id/tv_or_login"
+            app:srcCompat="@color/colorTextWhite" />
 
-    <!--    <TextView-->
-<!--        android:id="@+id/tv_dontHaveAccount_login"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="75dp"-->
-<!--        android:layout_marginBottom="25dp"-->
-<!--        android:fontFamily="@font/poppins_medium"-->
-<!--        android:text="Don't have an acccount?"-->
-<!--        android:textColor="#f1f1f1"-->
-<!--        android:textSize="12sp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/button_signin_login" />-->
+        <Button
+            android:id="@+id/button_joinNow_login"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="55dp"
+            android:text="JOIN NOW"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/border_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_or_login" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/tv_joinNow_login"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginEnd="75dp"-->
-<!--        android:layout_marginBottom="25dp"-->
-<!--        android:text="Join Now"-->
-<!--        android:textColor="#53d9e8"-->
-<!--        android:textSize="12sp"-->
-<!--        android:textStyle="bold"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/tv_dontHaveAccount_login"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/button_signin_login" />-->
+        <!--    <TextView-->
+        <!--        android:id="@+id/tv_dontHaveAccount_login"-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_marginStart="75dp"-->
+        <!--        android:layout_marginBottom="25dp"-->
+        <!--        android:fontFamily="@font/poppins_medium"-->
+        <!--        android:text="Don't have an acccount?"-->
+        <!--        android:textColor="#f1f1f1"-->
+        <!--        android:textSize="12sp"-->
+        <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--        app:layout_constraintStart_toStartOf="parent"-->
+        <!--        app:layout_constraintTop_toBottomOf="@+id/button_signin_login" />-->
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!--    <TextView-->
+        <!--        android:id="@+id/tv_joinNow_login"-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_marginEnd="75dp"-->
+        <!--        android:layout_marginBottom="25dp"-->
+        <!--        android:text="Join Now"-->
+        <!--        android:textColor="#53d9e8"-->
+        <!--        android:textSize="12sp"-->
+        <!--        android:textStyle="bold"-->
+        <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--        app:layout_constraintEnd_toEndOf="parent"-->
+        <!--        app:layout_constraintStart_toEndOf="@+id/tv_dontHaveAccount_login"-->
+        <!--        app:layout_constraintTop_toBottomOf="@+id/button_signin_login" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
