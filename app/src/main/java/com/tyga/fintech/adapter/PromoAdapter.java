@@ -1,12 +1,8 @@
 package com.tyga.fintech.adapter;
 
 import android.content.Context;
-import android.content.Intent;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,41 +10,37 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
-import com.tyga.fintech.R;
-import com.tyga.fintech.model.Merchant;
+import com.tyga.fintech.model.Promo;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class MerchantAdapter extends RecyclerView.Adapter<MerchantAdapter.CategoryViewHolder> {
+public class PromoAdapter extends RecyclerView.Adapter<PromoAdapter.CategoryViewHolder> {
 
     public interface OnItemClickListener {
-        void onItemClick(Merchant merchant);
+        void onItemClick(Promo promo);
     }
 
     private Context context;
     private OnItemClickListener listener;
-    private List<Merchant> listMerchant;
+    private List<Promo> listPromo;
     private String status, category;
 
     @NonNull
     @Override
     public CategoryViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-//        View itemRow = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_merchant, viewGroup, false);
+//        View itemRow = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_promo, viewGroup, false);
 //        return new CategoryViewHolder(itemRow);
         return null;
     }
 
-    public MerchantAdapter(Context context, OnItemClickListener itemClickListener) {
+    public PromoAdapter(Context context, OnItemClickListener itemClickListener) {
         this.context = context;
         this.listener = itemClickListener;
     }
 
     @Override
     public void onBindViewHolder(@NonNull CategoryViewHolder categoryViewHolder, final int position) {
-        categoryViewHolder.bind(getListMerchant().get(position), listener);
+        categoryViewHolder.bind(getListPromo().get(position), listener);
 //
 
     }
@@ -57,15 +49,15 @@ public class MerchantAdapter extends RecyclerView.Adapter<MerchantAdapter.Catego
 
     @Override
     public int getItemCount() {
-        return getListMerchant().size();
+        return getListPromo().size();
     }
 
-    public List<Merchant> getListMerchant() {
-        return listMerchant;
+    public List<Promo> getListPromo() {
+        return listPromo;
     }
 
-    public void setListMerchant(List<Merchant> listMerchant) {
-        this.listMerchant = listMerchant;
+    public void setListPromo(List<Promo> listPromo) {
+        this.listPromo = listPromo;
     }
 
     class CategoryViewHolder extends RecyclerView.ViewHolder {
@@ -77,10 +69,10 @@ public class MerchantAdapter extends RecyclerView.Adapter<MerchantAdapter.Catego
 //            mCard = itemView.findViewById(R.id.favorite_card);
         }
 
-        public void bind(final Merchant merchant, final OnItemClickListener listener) {
-//            judul.setText(merchant.getNama());
+        public void bind(final Promo promo, final OnItemClickListener listener) {
+//            judul.setText(promo.getNama());
 //        Glide.with(context)
-//                .load("https://image.tmdb.org/t/p/w185/"+getListMerchant().get(position).getPoster_path())
+//                .load("https://image.tmdb.org/t/p/w185/"+getListPromo().get(position).getPoster_path())
 //                .apply(new RequestOptions())
 //                .placeholder(R.drawable.placeholder)
 //                .into(imgPhoto);
@@ -95,7 +87,7 @@ public class MerchantAdapter extends RecyclerView.Adapter<MerchantAdapter.Catego
 //        });
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View v) {
-                    listener.onItemClick(merchant);
+                    listener.onItemClick(promo);
                 }
             });
         }
