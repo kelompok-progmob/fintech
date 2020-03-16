@@ -28,6 +28,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".DetailPromoActivity" />
+        <activity android:name=".PromoActivity" />
+        <activity android:name=".DetailMerchantActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
