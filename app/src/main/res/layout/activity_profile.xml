@@ -94,7 +94,7 @@
 
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/tv_merchant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -106,7 +106,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/divider" />
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/tv_nasabah"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -151,7 +151,7 @@
                 android:background="@android:color/darker_gray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView9" />
+                app:layout_constraintTop_toBottomOf="@id/tv_nasabah" />
 
             <View
                 android:id="@+id/divider2"
@@ -164,7 +164,7 @@
                 android:background="@android:color/darker_gray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView10" />
+                app:layout_constraintTop_toBottomOf="@id/tv_merchant" />
 
             <View
                 android:id="@+id/divider3"

@@ -10,35 +10,51 @@
         android:id="@+id/tv_registersebgai_registerchoose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:text="Registrasi sebagai"
         android:textColor="#000000"
-        android:textSize="20sp"
+        android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_nasabah_regcho"
-        android:layout_width="300px"
-        android:layout_height="400px"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="35dp"
+        android:layout_width="450px"
+        android:layout_height="550px"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        app:cardCornerRadius="20px"
+        app:layout_constraintEnd_toStartOf="@+id/cardView3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_registersebgai_registerchoose" >
+        app:layout_constraintTop_toBottomOf="@+id/tv_registersebgai_registerchoose">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="32dp"
-                android:text="Nasabah"
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="288dp"
+                android:layout_height="298dp"
+                android:layout_marginStart="-5dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/nasabah" />
+
+            <TextView
+                android:id="@+id/tv_nasabah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="Nasabah"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -46,10 +62,12 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="300px"
-        android:layout_height="400px"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="50dp"
+        android:id="@+id/cardView3"
+        android:layout_width="450px"
+        android:layout_height="550px"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="24dp"
+        app:cardCornerRadius="20px"
         app:layout_constraintBottom_toBottomOf="@+id/cv_nasabah_regcho"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/cv_nasabah_regcho"
@@ -59,14 +77,26 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="32dp"
-                android:text="Merchant"
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="293dp"
+                android:layout_height="313dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/merchant" />
+
+            <TextView
+                android:id="@+id/tv_merchant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="Merchant"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
