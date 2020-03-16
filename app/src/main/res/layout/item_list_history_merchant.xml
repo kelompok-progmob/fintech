@@ -21,7 +21,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/tanggalHistoryNasabah"
+                android:id="@+id/tanggalHistoryMerchant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -31,17 +31,17 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/jamHistoryNasabah"
+                android:id="@+id/jamHistoryMerchant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:text="19.28"
-                app:layout_constraintStart_toEndOf="@+id/tanggalHistoryNasabah"
+                app:layout_constraintStart_toEndOf="@+id/tanggalHistoryMerchant"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/merchantHistoryNasabah"
+                android:id="@+id/merchantHistoryMerchant"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -49,10 +49,10 @@
                 android:textSize="28sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tanggalHistoryNasabah" />
+                app:layout_constraintTop_toBottomOf="@id/tanggalHistoryMerchant" />
 
             <TextView
-                android:id="@+id/lpdHistoryNasabah"
+                android:id="@+id/lpdHistoryMerchant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -60,10 +60,10 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/merchantHistoryNasabah" />
+                app:layout_constraintTop_toBottomOf="@id/merchantHistoryMerchant" />
 
             <TextView
-                android:id="@+id/hargaHistoryNasabah"
+                android:id="@+id/hargaHistoryMerchant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"

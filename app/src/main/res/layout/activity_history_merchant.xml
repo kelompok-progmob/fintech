@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HistoryNasabahActivity"
-    android:orientation="vertical">
+    tools:context=".HistoryMerchantActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
@@ -45,11 +44,11 @@
                 android:text="Rp"
                 android:textColor="@color/colorTextWhite"
                 android:textSize="24dp"
-                app:layout_constraintEnd_toStartOf="@+id/saldoHistoryNasabah"
+                app:layout_constraintEnd_toStartOf="@+id/saldoHistoryMerchant"
                 app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
             <TextView
-                android:id="@+id/saldoHistoryNasabah"
+                android:id="@+id/saldoHistoryMerchant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
@@ -76,12 +75,12 @@
             android:id="@+id/textView7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
             android:layout_marginLeft="8dp"
-            android:text="Riwayat Pembayaran" />
+            android:layout_marginBottom="16dp"
+            android:text="Riwayat Transaksi" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvHistoryNasabah"
+            android:id="@+id/rvHistoryMerchant"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>
