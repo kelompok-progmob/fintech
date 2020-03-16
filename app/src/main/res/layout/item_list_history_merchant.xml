@@ -5,12 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cdTop"
         android:layout_width="match_parent"
         android:layout_height="160dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:foreground="?android:attr/selectableItemBackground"
         app:cardCornerRadius="10dp"
         card_view:cardElevation="3sp"
