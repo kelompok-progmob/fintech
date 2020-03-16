@@ -26,7 +26,86 @@
         app:layout_constraintBottom_toBottomOf="@+id/iv_background_home"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_background_home" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_background_home" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_topup_home"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_topup_home"
+                app:layout_constraintEnd_toStartOf="@+id/iv_merchant_home"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_topup"
+                tools:ignore="VectorDrawableCompat" />
+
+            <ImageView
+                android:id="@+id/iv_merchant_home"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_merchant_home"
+                app:layout_constraintEnd_toStartOf="@+id/iv_history_home"
+                app:layout_constraintStart_toEndOf="@+id/iv_topup_home"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_merchant"
+                tools:ignore="VectorDrawableCompat" />
+
+            <ImageView
+                android:id="@+id/iv_history_home"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="45dp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_history_home"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_merchant_home"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_history"
+                tools:ignore="VectorDrawableCompat" />
+
+            <TextView
+                android:id="@+id/tv_topup_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Top Up"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/iv_topup_home"
+                app:layout_constraintStart_toStartOf="@+id/iv_topup_home"
+                app:layout_constraintTop_toBottomOf="@+id/iv_topup_home" />
+
+            <TextView
+                android:id="@+id/tv_merchant_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Merchant"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/iv_merchant_home"
+                app:layout_constraintStart_toStartOf="@+id/iv_merchant_home"
+                app:layout_constraintTop_toBottomOf="@+id/iv_merchant_home" />
+
+            <TextView
+                android:id="@+id/tv_history_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="History"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/iv_history_home"
+                app:layout_constraintStart_toStartOf="@+id/iv_history_home"
+                app:layout_constraintTop_toBottomOf="@+id/iv_history_home" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/tv_rp_home"
@@ -62,5 +141,6 @@
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="@+id/iv_background_home"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_notification_white" />
+        app:srcCompat="@drawable/ic_notification_white"
+        tools:ignore="VectorDrawableCompat" />
 </androidx.constraintlayout.widget.ConstraintLayout>
