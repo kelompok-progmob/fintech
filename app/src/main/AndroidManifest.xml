@@ -28,23 +28,23 @@
         <activity
             android:name=".RegisterActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".LoginActivity">
+
+        </activity>
         <activity android:name=".TopUpActivity" />
         <activity android:name=".MerchantActivity">
 
         </activity>
         <activity android:name=".QRGeneratorActivity" />
         <activity android:name=".MainActivity">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
         </activity>
-        <activity android:name=".ProfileActivity" />
+        <activity android:name=".ProfileActivity"></activity>
         <activity android:name=".DetailPromoActivity" />
         <activity android:name=".PromoActivity" />
-        <activity android:name=".DetailMerchantActivity"></activity>
+        <activity android:name=".DetailMerchantActivity" >
+
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"
