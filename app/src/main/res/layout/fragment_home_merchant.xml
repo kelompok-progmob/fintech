@@ -48,7 +48,7 @@
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:text="Selamat datang,"
                 android:textColor="@color/colorPrimary"
@@ -70,15 +70,17 @@
 
             <TextView
                 android:id="@+id/namaHomeMerchant"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:layout_marginBottom="20dp"
                 android:text="Kedai Kopi Rage"
                 android:textColor="@color/colorPrimary"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/iv_history_home"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView3" />
 
@@ -116,8 +118,8 @@
         android:id="@+id/iv_notif_home"
         android:layout_width="29dp"
         android:layout_height="22dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="@+id/iv_background_home"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_notification_white"
@@ -208,12 +210,13 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
+
     <ImageView
         android:id="@+id/iv_logo_home"
         android:layout_width="25dp"
         android:layout_height="22dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
         android:src="@drawable/ic_logo_white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
