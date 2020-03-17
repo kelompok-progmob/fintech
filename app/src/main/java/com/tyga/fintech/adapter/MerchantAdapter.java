@@ -36,9 +36,9 @@ public class MerchantAdapter extends RecyclerView.Adapter<MerchantAdapter.Catego
     @NonNull
     @Override
     public CategoryViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-//        View itemRow = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_merchant, viewGroup, false);
-//        return new CategoryViewHolder(itemRow);
-        return null;
+        View itemRow = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_list_merchant, viewGroup, false);
+        return new CategoryViewHolder(itemRow);
+//        return null;
     }
 
     public MerchantAdapter(Context context, OnItemClickListener itemClickListener) {
@@ -49,7 +49,6 @@ public class MerchantAdapter extends RecyclerView.Adapter<MerchantAdapter.Catego
     @Override
     public void onBindViewHolder(@NonNull CategoryViewHolder categoryViewHolder, final int position) {
         categoryViewHolder.bind(getListMerchant().get(position), listener);
-//
 
     }
 
@@ -69,30 +68,22 @@ public class MerchantAdapter extends RecyclerView.Adapter<MerchantAdapter.Catego
     }
 
     class CategoryViewHolder extends RecyclerView.ViewHolder {
-        ImageView imgPhoto;
-        TextView judul;
+
+        TextView nama, alamat, deskripsi;
         CardView mCard;
         CategoryViewHolder(@NonNull View itemView) {
             super(itemView);
-//            mCard = itemView.findViewById(R.id.favorite_card);
+            mCard = itemView.findViewById(R.id.cdTop);
+            nama = itemView.findViewById(R.id.namaListMerchant);
+            alamat = itemView.findViewById(R.id.alamatListMerchant);
+            deskripsi = itemView.findViewById(R.id.descListMerchant);
         }
 
         public void bind(final Merchant merchant, final OnItemClickListener listener) {
-//            judul.setText(merchant.getNama());
-//        Glide.with(context)
-//                .load("https://image.tmdb.org/t/p/w185/"+getListMerchant().get(position).getPoster_path())
-//                .apply(new RequestOptions())
-//                .placeholder(R.drawable.placeholder)
-//                .into(imgPhoto);
-//
-//        mCard.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(context, DetailActivity.class);
-//                intent.putExtra("dataMovie", getListMovie().get(position));
-//                context.startActivity(intent);
-//            }
-//        });
+            nama.setText(merchant.getNama());
+            alamat.setText(merchant.getAlamat());
+            deskripsi.setText(merchant.getDeskripsi());
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View v) {
                     listener.onItemClick(merchant);

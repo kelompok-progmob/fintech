@@ -5,15 +5,17 @@ import android.os.Parcelable;
 
 public class Promo implements Parcelable {
 
-    private String id_promo, id_merchant, nama,alamat,deskripsi, syarat_penggunaan, tanggal_mulai, tanggal_berakhir, active;
+    private String id_promo, id_merchant, nama_promo,image_promo, nama,alamat,deskripsi, syarat_penggunaan, tanggal_mulai, tanggal_berakhir, active;
     private double nominal;
 
     public Promo() {
     }
 
-    public Promo(String id_promo, String id_merchant, String nama, String alamat, String deskripsi, String syarat_penggunaan, String tanggal_mulai, String tanggal_berakhir, String active, double nominal) {
+    public Promo(String id_promo, String id_merchant, String nama_promo, String image_promo, String nama, String alamat, String deskripsi, String syarat_penggunaan, String tanggal_mulai, String tanggal_berakhir, String active, double nominal) {
         this.id_promo = id_promo;
         this.id_merchant = id_merchant;
+        this.nama_promo = nama_promo;
+        this.image_promo = image_promo;
         this.nama = nama;
         this.alamat = alamat;
         this.deskripsi = deskripsi;
@@ -22,6 +24,22 @@ public class Promo implements Parcelable {
         this.tanggal_berakhir = tanggal_berakhir;
         this.active = active;
         this.nominal = nominal;
+    }
+
+    public String getNama_promo() {
+        return nama_promo;
+    }
+
+    public void setNama_promo(String nama_promo) {
+        this.nama_promo = nama_promo;
+    }
+
+    public String getImage_promo() {
+        return image_promo;
+    }
+
+    public void setImage_promo(String image_promo) {
+        this.image_promo = image_promo;
     }
 
     public String getAlamat() {
@@ -113,18 +131,22 @@ public class Promo implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.id_promo) ;
         dest.writeString(this.id_merchant) ;
+        dest.writeString(this.nama_promo) ;
         dest.writeString(this.nama) ;
         dest.writeString(this.alamat) ;
         dest.writeString(this.deskripsi) ;
         dest.writeString(this.syarat_penggunaan) ;
         dest.writeString(this.tanggal_mulai) ;
         dest.writeString(this.tanggal_berakhir) ;
+        dest.writeString(this.image_promo) ;
     }
 
     protected Promo(Parcel in) {
 
         this.id_promo = in.readString();
         this.id_merchant = in.readString();
+        this.image_promo = in.readString();
+        this.nama_promo = in.readString();
         this.nama = in.readString();
         this.alamat = in.readString();
         this.deskripsi = in.readString();
