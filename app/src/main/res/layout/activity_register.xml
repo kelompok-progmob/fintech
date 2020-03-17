@@ -29,26 +29,26 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_nama_register" />
 
     <TextView
-        android:id="@+id/tv_email_register"
+        android:id="@+id/tv_nik_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:text="Email"
+        android:text="NIK"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_nama_register" />
 
     <EditText
-        android:id="@+id/et_email_register"
+        android:id="@+id/et_nik_register"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:ems="10"
-        android:inputType="textEmailAddress"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_email_register" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_nik_register" />
 
     <TextView
         android:id="@+id/tv_noHp_register"
@@ -58,7 +58,7 @@
         android:layout_marginTop="16dp"
         android:text="Nomor Ponsel"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_email_register" />
+        app:layout_constraintTop_toBottomOf="@+id/et_nik_register" />
 
     <EditText
         android:id="@+id/et_noHp_register"
@@ -126,13 +126,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="55dp"
         android:layout_marginEnd="55dp"
-        android:layout_marginBottom="48dp"
         android:background="@drawable/border_blue_primary"
         android:text="REGISTRASI"
         android:textColor="@color/colorTextWhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox_register" />
 
     <TextView
         android:id="@+id/tv_pilihlpd_register"
