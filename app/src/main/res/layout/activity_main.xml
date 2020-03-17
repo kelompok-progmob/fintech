@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,177 +8,18 @@
     android:background="#F7F3F3">
 
 
-    <ImageView
-        android:id="@+id/iv_background_home"
-        android:layout_width="0dp"
-        android:layout_height="450px"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@color/colorPrimary" />
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation"/>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cv_menu_home"
-        android:layout_width="0dp"
-        android:layout_height="220px"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        app:cardCornerRadius="25px"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_background_home"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_background_home" >
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/iv_topup_home"
-                android:layout_width="0dp"
-                android:layout_height="32dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintBottom_toTopOf="@+id/tv_topup_home"
-                app:layout_constraintEnd_toStartOf="@+id/iv_merchant_home"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_topup"
-                tools:ignore="VectorDrawableCompat" />
-
-            <ImageView
-                android:id="@+id/iv_merchant_home"
-                android:layout_width="0dp"
-                android:layout_height="32dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintBottom_toTopOf="@+id/tv_merchant_home"
-                app:layout_constraintEnd_toStartOf="@+id/iv_history_home"
-                app:layout_constraintStart_toEndOf="@+id/iv_topup_home"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_merchant"
-                tools:ignore="VectorDrawableCompat" />
-
-            <ImageView
-                android:id="@+id/iv_history_home"
-                android:layout_width="0dp"
-                android:layout_height="32dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="32dp"
-                app:layout_constraintBottom_toTopOf="@+id/tv_history_home"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/iv_merchant_home"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_history"
-                tools:ignore="VectorDrawableCompat" />
-
-            <TextView
-                android:id="@+id/tv_topup_home"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Top Up"
-                android:textColor="@color/colorPrimary"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/iv_topup_home"
-                app:layout_constraintStart_toStartOf="@+id/iv_topup_home"
-                app:layout_constraintTop_toBottomOf="@+id/iv_topup_home" />
-
-            <TextView
-                android:id="@+id/tv_merchant_home"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Merchant"
-                android:textColor="@color/colorPrimary"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/iv_merchant_home"
-                app:layout_constraintStart_toStartOf="@+id/iv_merchant_home"
-                app:layout_constraintTop_toBottomOf="@+id/iv_merchant_home" />
-
-            <TextView
-                android:id="@+id/tv_history_home"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="History"
-                android:textColor="@color/colorPrimary"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/iv_history_home"
-                app:layout_constraintStart_toStartOf="@+id/iv_history_home"
-                app:layout_constraintTop_toBottomOf="@+id/iv_history_home" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <TextView
-        android:id="@+id/tv_rp_home"
-        android:layout_width="wrap_content"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:text="Rp"
-        android:textColor="@color/colorTextWhite"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/tv_nominalsaldo_home"
-        app:layout_constraintStart_toStartOf="@+id/iv_background_home"
-        app:layout_constraintTop_toTopOf="@+id/tv_nominalsaldo_home" />
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_navigation"
+        android:background="#ffffff"/>
 
-    <TextView
-        android:id="@+id/tv_nominalsaldo_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginBottom="16dp"
-        android:text="90.000"
-        android:textColor="@color/colorTextWhite"
-        android:textSize="35sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/cv_menu_home"
-        app:layout_constraintStart_toEndOf="@+id/tv_rp_home" />
-
-    <ImageView
-        android:id="@+id/iv_notif_home"
-        android:layout_width="29dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/iv_background_home"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_notification_white"
-        tools:ignore="VectorDrawableCompat" />
-
-    <TextView
-        android:id="@+id/tv_promo_home"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Info dan Promo Spesial"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/textView17"
-        app:layout_constraintStart_toStartOf="@+id/cv_menu_home"
-        app:layout_constraintTop_toBottomOf="@+id/cv_menu_home" />
-
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:text="Lihat Semua"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_promo_home"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_promo_home"
-        app:layout_constraintTop_toTopOf="@+id/tv_promo_home" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewHome"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_promo_home"
-        tools:listitem="@layout/item_promo_home" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
