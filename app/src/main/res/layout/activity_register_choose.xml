@@ -22,7 +22,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_nasabah_regcho"
         android:layout_width="0dp"
-        android:layout_height="480px"
+        android:layout_height="220dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
@@ -65,7 +65,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView3"
         android:layout_width="0dp"
-        android:layout_height="480px"
+        android:layout_height="220dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="16dp"
         app:cardCornerRadius="20px"
