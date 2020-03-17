@@ -14,7 +14,7 @@ public class DetailPromoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.detail_promo_activity);
+        setContentView(R.layout.activity_detail_promo);
 
         ActionBar ab = getSupportActionBar();
         if (ab != null){
