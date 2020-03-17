@@ -162,6 +162,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:text="Lihat Semua"
+        android:textSize="12dp"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/tv_promo_home"
         app:layout_constraintEnd_toEndOf="parent"
@@ -179,5 +180,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_promo_home"
         tools:listitem="@layout/item_promo_home" />
+
+    <ImageView
+        android:id="@+id/iv_logo_home"
+        android:layout_width="25dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_logo_white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
