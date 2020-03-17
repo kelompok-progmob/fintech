@@ -28,25 +28,15 @@
         <activity
             android:name=".RegisterActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".LoginActivity">
-
-        </activity>
+        <activity android:name=".LoginActivity"></activity>
         <activity android:name=".TopUpActivity" />
-        <activity android:name=".MerchantActivity">
-
-        </activity>
+        <activity android:name=".MerchantActivity"></activity>
         <activity android:name=".QRGeneratorActivity" />
-        <activity android:name=".MainActivity">
-
-        </activity>
-        <activity android:name=".ProfileActivity"></activity>
-        <activity android:name=".DetailPromoActivity" >
-
-        </activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".DetailPromoActivity" />
         <activity android:name=".PromoActivity" />
-        <activity android:name=".DetailMerchantActivity" >
-
-        </activity>
+        <activity android:name=".DetailMerchantActivity"></activity>
 
         <meta-data
             android:name="preloaded_fonts"

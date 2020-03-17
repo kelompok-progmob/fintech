@@ -1,6 +1,7 @@
 package com.tyga.fintech.adapter;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -10,6 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+import com.tyga.fintech.R;
 import com.tyga.fintech.model.Promo;
 
 import java.util.List;
@@ -28,9 +32,9 @@ public class PromoAdapter extends RecyclerView.Adapter<PromoAdapter.CategoryView
     @NonNull
     @Override
     public CategoryViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-//        View itemRow = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_promo, viewGroup, false);
-//        return new CategoryViewHolder(itemRow);
-        return null;
+        View itemRow = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_promo_home, viewGroup, false);
+        return new CategoryViewHolder(itemRow);
+
     }
 
     public PromoAdapter(Context context, OnItemClickListener itemClickListener) {
@@ -41,8 +45,6 @@ public class PromoAdapter extends RecyclerView.Adapter<PromoAdapter.CategoryView
     @Override
     public void onBindViewHolder(@NonNull CategoryViewHolder categoryViewHolder, final int position) {
         categoryViewHolder.bind(getListPromo().get(position), listener);
-//
-
     }
 
 
@@ -62,29 +64,26 @@ public class PromoAdapter extends RecyclerView.Adapter<PromoAdapter.CategoryView
 
     class CategoryViewHolder extends RecyclerView.ViewHolder {
         ImageView imgPhoto;
-        TextView judul;
+        TextView judul,tanggal,nominal;
         CardView mCard;
         CategoryViewHolder(@NonNull View itemView) {
             super(itemView);
-//            mCard = itemView.findViewById(R.id.favorite_card);
+            imgPhoto = itemView.findViewById(R.id.iv_icon_promo);
+            judul = itemView.findViewById(R.id.tv_judul_promo);
+            tanggal = itemView.findViewById(R.id.tv_tanggal_promo);
+            nominal = itemView.findViewById(R.id.tv_nominal_promo);
         }
 
         public void bind(final Promo promo, final OnItemClickListener listener) {
-//            judul.setText(promo.getNama());
-//        Glide.with(context)
-//                .load("https://image.tmdb.org/t/p/w185/"+getListPromo().get(position).getPoster_path())
-//                .apply(new RequestOptions())
-//                .placeholder(R.drawable.placeholder)
-//                .into(imgPhoto);
-//
-//        mCard.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(context, DetailActivity.class);
-//                intent.putExtra("dataMovie", getListMovie().get(position));
-//                context.startActivity(intent);
-//            }
-//        });
+            judul.setText(promo.getNama_promo());
+            Glide.with(context)
+                .load(promo.getImage_promo())
+                .apply(new RequestOptions())
+                .placeholder(R.drawable.placeholder)
+                .into(imgPhoto);
+
+            nominal.setText(String.valueOf(promo.getNominal()));
+            tanggal.setText(promo.getTanggal_berakhir());
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View v) {
                     listener.onItemClick(promo);

@@ -1,6 +1,6 @@
 // UserWithToken.java
 
-package com.tyga.fintech.model;;
+package com.tyga.fintech.model;
 
 import java.util.*;
 
