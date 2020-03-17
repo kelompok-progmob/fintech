@@ -6,8 +6,14 @@ import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
+import com.budiyev.android.codescanner.CodeScanner;
+import com.budiyev.android.codescanner.CodeScannerView;
+import com.budiyev.android.codescanner.DecodeCallback;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.zxing.Result;
 
 public class MainActivity extends AppCompatActivity {
 

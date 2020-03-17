@@ -6,7 +6,9 @@ import androidx.databinding.DataBindingUtil;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -31,12 +33,21 @@ public class LoginActivity extends AppCompatActivity {
     TokenManager tokenManager;
     Call<UserWithToken> call;
 
+    SharedPreferences settings;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding =  DataBindingUtil.setContentView(this,R.layout.activity_login);
         mContext = this;
         initComponents();
+
+        SharedPreferences settings = getSharedPreferences("prefs", MODE_PRIVATE);
+        if(!settings.getString("no_hp","").equals("")){
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
 
         service = ApiClient.createService(ApiService.class);
         tokenManager = TokenManager.getInstance(getSharedPreferences("prefs", MODE_PRIVATE));
@@ -64,9 +75,15 @@ public class LoginActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     tokenManager.saveToken(response.body());
                     if(response.body().getUser().getRole().equals("1")){
-                        startActivity(new Intent(LoginActivity.this, MerchantActivity.class));
-                    }else{
+
+                        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(LoginActivity.this);
+                        SharedPreferences.Editor editor = preferences.edit();
+                        editor.putString("no_hp",response.body().getUser().getNoHP());
+                        editor.apply();
+
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                    }else{
+                        startActivity(new Intent(LoginActivity.this, MerchantActivity.class));
                     }
                     finish();
                 }
