@@ -7,10 +7,10 @@
     <item
         android:id="@+id/nav_scan"
         android:icon="@drawable/ic_scan"
-        android:title="News" />
+        android:title="Scan" />
     <item
         android:id="@+id/nav_profile"
         android:icon="@drawable/ic_profile"
-        android:title="My Account" />
+        android:title="Profile" />
 
 </menu>
