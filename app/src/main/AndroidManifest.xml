@@ -40,7 +40,9 @@
 
         </activity>
         <activity android:name=".ProfileActivity"></activity>
-        <activity android:name=".DetailPromoActivity" />
+        <activity android:name=".DetailPromoActivity" >
+
+        </activity>
         <activity android:name=".PromoActivity" />
         <activity android:name=".DetailMerchantActivity" >
 
