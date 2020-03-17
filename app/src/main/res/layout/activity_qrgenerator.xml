@@ -85,7 +85,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/shapping_button"
+        android:background="@drawable/border_white_outline"
         android:text="generate"
         android:textColor="@color/colorTextWhite"
         app:layout_constraintStart_toStartOf="parent"
