@@ -32,77 +32,55 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/iv_topup_home"
-                android:layout_width="0dp"
-                android:layout_height="32dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintBottom_toTopOf="@+id/tv_topup_home"
-                app:layout_constraintEnd_toStartOf="@+id/iv_merchant_home"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_topup"
-                tools:ignore="VectorDrawableCompat" />
-
-            <ImageView
-                android:id="@+id/iv_merchant_home"
-                android:layout_width="0dp"
-                android:layout_height="32dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintBottom_toTopOf="@+id/tv_merchant_home"
-                app:layout_constraintEnd_toStartOf="@+id/iv_history_home"
-                app:layout_constraintStart_toEndOf="@+id/iv_topup_home"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_merchant"
-                tools:ignore="VectorDrawableCompat" />
 
             <ImageView
                 android:id="@+id/iv_history_home"
-                android:layout_width="0dp"
+                android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="32dp"
-                app:layout_constraintBottom_toTopOf="@+id/tv_history_home"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/iv_merchant_home"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_history"
                 tools:ignore="VectorDrawableCompat" />
 
             <TextView
-                android:id="@+id/tv_topup_home"
+                android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Top Up"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Selamat datang,"
                 android:textColor="@color/colorPrimary"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/iv_topup_home"
-                app:layout_constraintStart_toStartOf="@+id/iv_topup_home"
-                app:layout_constraintTop_toBottomOf="@+id/iv_topup_home" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_history_home"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="History"-->
+<!--                android:textColor="@color/colorPrimary"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="@+id/iv_history_home"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/iv_history_home"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/iv_history_home" />-->
 
             <TextView
-                android:id="@+id/tv_merchant_home"
+                android:id="@+id/namaHomeMerchant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Merchant"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="20dp"
+                android:text="Kedai Kopi Rage"
                 android:textColor="@color/colorPrimary"
+                android:textSize="24sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/iv_merchant_home"
-                app:layout_constraintStart_toStartOf="@+id/iv_merchant_home"
-                app:layout_constraintTop_toBottomOf="@+id/iv_merchant_home" />
-
-            <TextView
-                android:id="@+id/tv_history_home"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="History"
-                android:textColor="@color/colorPrimary"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/iv_history_home"
-                app:layout_constraintStart_toStartOf="@+id/iv_history_home"
-                app:layout_constraintTop_toBottomOf="@+id/iv_history_home" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView3" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
