@@ -1,224 +1,236 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+
+<ScrollView android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeMerchantFragment"
-    android:background="#F7F3F3">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <ImageView
-        android:id="@+id/iv_background_home"
-        android:layout_width="0dp"
-        android:layout_height="450px"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@color/colorPrimary" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cv_menu_home"
-        android:layout_width="0dp"
-        android:layout_height="220px"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        app:cardCornerRadius="25px"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_background_home"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_background_home" >
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
+            android:layout_height="match_parent"
+            tools:context=".HomeMerchantFragment"
+            android:background="#F7F3F3">
 
             <ImageView
-                android:id="@+id/iv_history_home"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/iv_background_home"
+                android:layout_width="0dp"
+                android:layout_height="450px"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_history"
+                app:srcCompat="@color/colorPrimary" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_menu_home"
+                android:layout_width="0dp"
+                android:layout_height="220px"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                app:cardCornerRadius="25px"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_background_home"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_background_home" >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <ImageView
+                        android:id="@+id/iv_history_home"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginEnd="16dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_history"
+                        tools:ignore="VectorDrawableCompat" />
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Selamat datang,"
+                        android:textColor="@color/colorPrimary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+                    <!--            <TextView-->
+                    <!--                android:id="@+id/tv_history_home"-->
+                    <!--                android:layout_width="wrap_content"-->
+                    <!--                android:layout_height="wrap_content"-->
+                    <!--                android:text="History"-->
+                    <!--                android:textColor="@color/colorPrimary"-->
+                    <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+                    <!--                app:layout_constraintEnd_toEndOf="@+id/iv_history_home"-->
+                    <!--                app:layout_constraintStart_toStartOf="@+id/iv_history_home"-->
+                    <!--                app:layout_constraintTop_toBottomOf="@+id/iv_history_home" />-->
+
+                    <TextView
+                        android:id="@+id/namaHomeMerchant"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="20dp"
+                        android:text="Kedai Kopi Rage"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/iv_history_home"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textView3" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tv_rp_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="Rp"
+                android:textColor="@color/colorTextWhite"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/tv_nominalsaldo_home"
+                app:layout_constraintStart_toStartOf="@+id/iv_background_home"
+                app:layout_constraintTop_toTopOf="@+id/tv_nominalsaldo_home" />
+
+            <TextView
+                android:id="@+id/tv_nominalsaldo_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginBottom="16dp"
+                android:text="90.000"
+                android:textColor="@color/colorTextWhite"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/cv_menu_home"
+                app:layout_constraintStart_toEndOf="@+id/tv_rp_home" />
+
+            <ImageView
+                android:id="@+id/iv_notif_home"
+                android:layout_width="29dp"
+                android:layout_height="22dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintEnd_toEndOf="@+id/iv_background_home"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_notification_white"
                 tools:ignore="VectorDrawableCompat" />
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:text="Selamat datang,"
-                android:textColor="@color/colorPrimary"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-
-
-<!--            <TextView-->
-<!--                android:id="@+id/tv_history_home"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="History"-->
-<!--                android:textColor="@color/colorPrimary"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintEnd_toEndOf="@+id/iv_history_home"-->
-<!--                app:layout_constraintStart_toStartOf="@+id/iv_history_home"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/iv_history_home" />-->
-
-            <TextView
-                android:id="@+id/namaHomeMerchant"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="20dp"
-                android:text="Kedai Kopi Rage"
-                android:textColor="@color/colorPrimary"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/iv_history_home"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView3" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <TextView
-        android:id="@+id/tv_rp_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:text="Rp"
-        android:textColor="@color/colorTextWhite"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/tv_nominalsaldo_home"
-        app:layout_constraintStart_toStartOf="@+id/iv_background_home"
-        app:layout_constraintTop_toTopOf="@+id/tv_nominalsaldo_home" />
-
-    <TextView
-        android:id="@+id/tv_nominalsaldo_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginBottom="16dp"
-        android:text="90.000"
-        android:textColor="@color/colorTextWhite"
-        android:textSize="35sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/cv_menu_home"
-        app:layout_constraintStart_toEndOf="@+id/tv_rp_home" />
-
-    <ImageView
-        android:id="@+id/iv_notif_home"
-        android:layout_width="29dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        app:layout_constraintEnd_toEndOf="@+id/iv_background_home"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_notification_white"
-        tools:ignore="VectorDrawableCompat" />
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        app:cardCornerRadius="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cv_menu_home">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/textView14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:text="Total Pendapatan Hari Ini"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textView15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="8dp"
-                android:text="Rp"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toStartOf="@id/pendapatanHomeMerchant"
-                app:layout_constraintTop_toBottomOf="@id/textView14" />
-
-            <TextView
-                android:id="@+id/pendapatanHomeMerchant"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:text="50.000"
-                android:textAlignment="textEnd"
-                android:textSize="56sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView14" />
-
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:text="Jumlah Transaksi Hari Ini"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/divider" />
-
-            <TextView
-                android:id="@+id/jumlahHomeMerchant"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:text="10"
-                android:textAlignment="textEnd"
-                android:textSize="60sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView16" />
-
-            <View
-                android:id="@+id/divider"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_below="@+id/cdTopUp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:background="@android:color/darker_gray"
+                android:layout_height="300dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                app:cardCornerRadius="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/pendapatanHomeMerchant" />
+                app:layout_constraintTop_toBottomOf="@id/cv_menu_home">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="Total Pendapatan Hari Ini"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="Rp"
+                        android:textSize="24sp"
+                        app:layout_constraintEnd_toStartOf="@id/pendapatanHomeMerchant"
+                        app:layout_constraintTop_toBottomOf="@id/textView14" />
+
+                    <TextView
+                        android:id="@+id/pendapatanHomeMerchant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="50.000"
+                        android:textAlignment="textEnd"
+                        android:textSize="56sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textView14" />
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="Jumlah Transaksi Hari Ini"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/divider" />
+
+                    <TextView
+                        android:id="@+id/jumlahHomeMerchant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="10"
+                        android:textAlignment="textEnd"
+                        android:textSize="60sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textView16" />
+
+                    <View
+                        android:id="@+id/divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/cdTopUp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@android:color/darker_gray"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/pendapatanHomeMerchant" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/iv_logo_home"
+                android:layout_width="25dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_logo_white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.cardview.widget.CardView>
-
-    <ImageView
-        android:id="@+id/iv_logo_home"
-        android:layout_width="25dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:src="@drawable/ic_logo_white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+</ScrollView>
