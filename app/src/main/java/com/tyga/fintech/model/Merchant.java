@@ -112,29 +112,30 @@ public class Merchant implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.id_merchant) ;
-        dest.writeString(this.nama) ;
-        dest.writeString(this.alamat) ;
         dest.writeString(this.id_lpd) ;
         dest.writeString(this.id_mapping_merchant) ;
-        dest.writeString(this.no_rek_merchant) ;
+        dest.writeString(this.nama) ;
+        dest.writeString(this.alamat) ;
         dest.writeString(this.deskripsi) ;
-        dest.writeString(this.no_hp) ;
+        dest.writeString(this.no_rek_merchant) ;
         dest.writeString(this.nama_lpd) ;
+        dest.writeString(this.no_hp) ;
         dest.writeDouble(this.total_saldo);
     }
 
     protected Merchant(Parcel in) {
 
         this.id_merchant = in.readString();
+        this.id_lpd = in.readString();
+        this.id_mapping_merchant = in.readString();
         this.nama = in.readString();
         this.alamat = in.readString();
         this.deskripsi= in.readString();
-        this.id_lpd = in.readString();
-        this.id_mapping_merchant = in.readString();
         this.no_rek_merchant = in.readString();
         this.nama_lpd = in.readString();
         this.no_hp = in.readString();
         this.total_saldo = in.readDouble();
+
 
     }
     public static final Creator<Merchant> CREATOR = new Creator<Merchant>() {

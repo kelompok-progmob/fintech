@@ -159,8 +159,8 @@ public class Promo implements Parcelable {
 
         this.id_promo = in.readString();
         this.id_merchant = in.readString();
-        this.image_promo = in.readString();
         this.nama_promo = in.readString();
+        this.image_promo = in.readString();
         this.nominal = in.readDouble();
         this.syarat_penggunaan = in.readString();
         this.tanggal_mulai = in.readString();
