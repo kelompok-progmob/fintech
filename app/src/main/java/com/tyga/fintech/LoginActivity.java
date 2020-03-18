@@ -53,9 +53,17 @@ public class LoginActivity extends AppCompatActivity {
         tokenManager = TokenManager.getInstance(getSharedPreferences("prefs", MODE_PRIVATE));
 
         if(tokenManager.getUser().getUser().getNoHP() != null){
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-            startActivity(intent);
-            finish();
+            if (tokenManager.getUser().getUser().getRole().equals("1")){
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+            else{
+                Intent intent = new Intent(LoginActivity.this, MerchantActivity.class);
+                startActivity(intent);
+                finish();
+            }
+
         }
 
         binding.buttonSigninLogin.setOnClickListener(new View.OnClickListener() {
