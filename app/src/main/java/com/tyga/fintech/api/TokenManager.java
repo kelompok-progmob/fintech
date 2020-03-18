@@ -46,6 +46,7 @@ public class TokenManager {
 
     public void saveMerchant(UserWithToken token){
         editor.putString("ID_MERCHANT", String.valueOf(token.getMerchant().getId_merchant())).commit();
+        editor.putString("IMAGE", String.valueOf(token.getMerchant().getImage())).commit();
         editor.putString("NAMA", String.valueOf(token.getMerchant().getNama())).commit();
         editor.putString("ALAMAT", String.valueOf(token.getMerchant().getAlamat())).commit();
         editor.putString("DESKRIPSI", String.valueOf(token.getMerchant().getDeskripsi())).commit();
@@ -109,10 +110,11 @@ public class TokenManager {
     public UserWithToken getMerchant(){
         UserWithToken token = new UserWithToken();
         Merchant user = new Merchant();
-        user.setId_merchant(prefs.getString("ID_NASABAH",null));
+        user.setId_merchant(prefs.getString("ID_MERCHANT",null));
         user.setNama(prefs.getString("NAMA",null));
-        user.setAlamat(prefs.getString("NIK",null));
-        user.setDeskripsi(prefs.getString("NIK",null));
+        user.setImage(prefs.getString("IMAGE",null));
+        user.setAlamat(prefs.getString("ALAMAT",null));
+        user.setDeskripsi(prefs.getString("DESKRIPSI",null));
 
 
         token.setMerchant(user);
