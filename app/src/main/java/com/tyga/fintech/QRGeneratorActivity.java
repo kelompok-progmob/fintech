@@ -40,7 +40,7 @@ public class QRGeneratorActivity extends AppCompatActivity {
         int smallerDimension = width < height ? width : height;
         smallerDimension = smallerDimension * 3 / 4;
 
-        String link = "?nominal="+value+"&id_merchant="+tokenManager.getUser().getUser().getIDUser();
+        String link = "?nominal="+value+"&id_merchant="+tokenManager.getMerchant().getMerchant().getId_merchant();
 
         qrgEncoder = new QRGEncoder(
                 link, null,
