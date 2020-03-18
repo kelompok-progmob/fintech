@@ -2,19 +2,22 @@ package com.tyga.fintech;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import android.os.Bundle;
 
+import com.tyga.fintech.databinding.ActivityDetailMerchantBinding;
 import com.tyga.fintech.model.Merchant;
 
 public class DetailMerchantActivity extends AppCompatActivity {
 
     private Merchant merchant;
+    private ActivityDetailMerchantBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_merchant);
+        binding =  DataBindingUtil.setContentView(this,R.layout.activity_detail_merchant);
 
         ActionBar ab = getSupportActionBar();
         if (ab != null){
@@ -26,7 +29,10 @@ public class DetailMerchantActivity extends AppCompatActivity {
         merchant = getIntent().getParcelableExtra("merchant");
 
         //set data
-
+        binding.alamatDetailMerchant.setText(merchant.getAlamat());
+        binding.namaDetailMerchant.setText(merchant.getNama());
+        binding.telpDetailMerchant.setText(merchant.getNo_hp());
+        binding.lpdDetailMerchant.setText(merchant.getNama_lpd());
     }
 
     @Override

@@ -28,6 +28,7 @@
         <activity android:name=".QRScannerActivity" />
         <activity android:name=".HistoryMerchantActivity" />
         <activity android:name=".HistoryNasabahActivity" />
+        <activity android:name=".ListMerchantActivity" />
         <activity
             android:name=".RegisterActivity"
             android:theme="@style/AppTheme" />

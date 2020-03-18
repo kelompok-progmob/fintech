@@ -5,13 +5,13 @@ import android.os.Parcelable;
 
 public class Merchant implements Parcelable {
 
-    private String id_merchant, id_lpd, id_mapping_merchant,nama,alamat,deskripsi,no_rek_merchant;
+    private String id_merchant, id_lpd, id_mapping_merchant,nama,alamat,deskripsi,no_rek_merchant,nama_lpd,no_hp;
     private double total_saldo;
 
     public Merchant() {
     }
 
-    public Merchant(String id_merchant, String id_lpd, String id_mapping_merchant, String nama, String alamat, String deskripsi, String no_rek_merchant, double total_saldo) {
+    public Merchant(String id_merchant, String id_lpd, String id_mapping_merchant, String nama, String alamat, String deskripsi, String no_rek_merchant, String nama_lpd, String no_hp, double total_saldo) {
         this.id_merchant = id_merchant;
         this.id_lpd = id_lpd;
         this.id_mapping_merchant = id_mapping_merchant;
@@ -19,7 +19,25 @@ public class Merchant implements Parcelable {
         this.alamat = alamat;
         this.deskripsi = deskripsi;
         this.no_rek_merchant = no_rek_merchant;
+        this.nama_lpd = nama_lpd;
+        this.no_hp = no_hp;
         this.total_saldo = total_saldo;
+    }
+
+    public String getNama_lpd() {
+        return nama_lpd;
+    }
+
+    public void setNama_lpd(String nama_lpd) {
+        this.nama_lpd = nama_lpd;
+    }
+
+    public String getNo_hp() {
+        return no_hp;
+    }
+
+    public void setNo_hp(String no_hp) {
+        this.no_hp = no_hp;
     }
 
     public String getDeskripsi() {
@@ -100,6 +118,8 @@ public class Merchant implements Parcelable {
         dest.writeString(this.id_mapping_merchant) ;
         dest.writeString(this.no_rek_merchant) ;
         dest.writeString(this.deskripsi) ;
+        dest.writeString(this.no_hp) ;
+        dest.writeString(this.nama_lpd) ;
         dest.writeDouble(this.total_saldo);
     }
 
@@ -112,6 +132,8 @@ public class Merchant implements Parcelable {
         this.id_lpd = in.readString();
         this.id_mapping_merchant = in.readString();
         this.no_rek_merchant = in.readString();
+        this.nama_lpd = in.readString();
+        this.no_hp = in.readString();
         this.total_saldo = in.readDouble();
 
     }

@@ -52,6 +52,12 @@ public class LoginActivity extends AppCompatActivity {
         service = ApiClient.createService(ApiService.class);
         tokenManager = TokenManager.getInstance(getSharedPreferences("prefs", MODE_PRIVATE));
 
+        if(tokenManager.getUser().getUser().getNoHP() != null){
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
         binding.buttonSigninLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,7 +80,9 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (response.isSuccessful()) {
                     tokenManager.saveToken(response.body());
+                    tokenManager.saveUser(response.body());
                     if(response.body().getUser().getRole().equals("1")){
+                        tokenManager.saveNasabah(response.body());
 
                         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(LoginActivity.this);
                         SharedPreferences.Editor editor = preferences.edit();
@@ -83,6 +91,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     }else{
+                        tokenManager.saveMerchant(response.body());
                         startActivity(new Intent(LoginActivity.this, MerchantActivity.class));
                     }
                     finish();

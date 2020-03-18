@@ -2,6 +2,7 @@ package com.tyga.fintech;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,6 +16,8 @@ import com.tyga.fintech.adapter.PromoAdapter;
 import com.tyga.fintech.api.ApiClient;
 import com.tyga.fintech.api.ApiService;
 import com.tyga.fintech.api.TokenManager;
+import com.tyga.fintech.databinding.ActivityListPromoBinding;
+import com.tyga.fintech.model.Lpd;
 import com.tyga.fintech.model.Promo;
 
 import java.util.ArrayList;
@@ -27,23 +30,25 @@ import retrofit2.Response;
 public class PromoActivity extends AppCompatActivity {
 
     private List<Promo> listPromo = new ArrayList<>();
-    private RecyclerView mPromoRv;
-    private TextView mNamaLpd;
     private TokenManager tokenManager;
+
+    ActivityListPromoBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.promo_activity);
+        binding =  DataBindingUtil.setContentView(this,R.layout.activity_list_promo);
+
         ActionBar ab = getSupportActionBar();
         if (ab != null){
             ab.setTitle("Promo");
             ab.setDisplayHomeAsUpEnabled(true);
             ab.setDisplayShowHomeEnabled(true);
         }
-        mNamaLpd = findViewById(R.id.lpdListPromo);
-//        mNamaLpd.setText();
+
         tokenManager = TokenManager.getInstance(getSharedPreferences("prefs", MODE_PRIVATE));
         callApi();
+        callLPD();
     }
 
     private void callApi(){
@@ -69,9 +74,27 @@ public class PromoActivity extends AppCompatActivity {
                 });
     }
 
+    private void callLPD(){
+        ApiClient.createServiceWithAuth(ApiService.class, tokenManager, this)
+                .getLpdNasabah()
+                .enqueue(new Callback<List<Lpd>>() {
+                    @Override
+                    public void onResponse(Call<List<Lpd>> call, Response<List<Lpd>> response) {
+                        if (response.body() != null){
+                            binding.lpdListPromo.setText(response.body().get(0).getNama());
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<Lpd>> call, Throwable t) {
+
+                    }
+                });
+    }
+
     private void settingRecyclerView(){
-        mPromoRv = findViewById(R.id.rvListPromo);
-        mPromoRv.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+
+        binding.rvListPromo.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         PromoAdapter promoAdapter = new PromoAdapter(this, new PromoAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Promo promo) {
@@ -81,7 +104,7 @@ public class PromoActivity extends AppCompatActivity {
             }
         });
         promoAdapter.setListPromo(listPromo);
-        mPromoRv.setAdapter(promoAdapter);
+        binding.rvListPromo.setAdapter(promoAdapter);
     }
 
     @Override

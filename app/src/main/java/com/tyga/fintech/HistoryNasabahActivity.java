@@ -45,10 +45,10 @@ public class HistoryNasabahActivity extends AppCompatActivity {
         }
         tokenManager = TokenManager.getInstance(getSharedPreferences("prefs", MODE_PRIVATE));
         saldoNasabah = findViewById(R.id.saldoHistoryNasabah);
-        callApi(String.valueOf(tokenManager.getToken().getUser().getIDUser()));
+        callApi();
     }
 
-    private void callApi(String idUser){
+    private void callApi(){
         ApiClient.createServiceWithAuth(ApiService.class, tokenManager, this)
                 .getHistoryNasabah()
                 .enqueue(new Callback<List<Transaksi>>() {
@@ -72,14 +72,15 @@ public class HistoryNasabahActivity extends AppCompatActivity {
     }
 
     private void settingRecyclerView(){
+        final double[] total = {0};
         mTransaksiRv = findViewById(R.id.rvHistoryNasabah);
         mTransaksiRv.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         HistoryNasabahAdapter historyNasabahAdapter = new HistoryNasabahAdapter(this, new HistoryNasabahAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Transaksi merchant) {
-                double total = 0;
-                total += merchant.getNominal();
-                saldoNasabah.setText(String.valueOf(total));
+
+                total[0] += merchant.getNominal();
+                saldoNasabah.setText(String.valueOf(total[0]));
             }
         });
         historyNasabahAdapter.setListTransaksi(listTransaksi);

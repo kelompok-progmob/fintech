@@ -5,20 +5,29 @@ import android.os.Parcelable;
 
 public class Transaksi implements Parcelable {
 
-    private String id_transaksi, id_user, id_merchant, tanggal, link_qrcode,nama;
+    private String id_transaksi, id_user, id_merchant, tanggal, link_qrcode,nama,nama_lpd;
     private double nominal;
 
-    public Transaksi(String id_transaksi, String id_user, String id_merchant, String tanggal, String link_qrcode, String nama, double nominal) {
+    public Transaksi(String id_transaksi, String id_user, String id_merchant, String tanggal, String link_qrcode, String nama, String nama_lpd, double nominal) {
         this.id_transaksi = id_transaksi;
         this.id_user = id_user;
         this.id_merchant = id_merchant;
         this.tanggal = tanggal;
         this.link_qrcode = link_qrcode;
         this.nama = nama;
+        this.nama_lpd = nama_lpd;
         this.nominal = nominal;
     }
 
     public Transaksi() {
+    }
+
+    public String getNama_lpd() {
+        return nama_lpd;
+    }
+
+    public void setNama_lpd(String nama_lpd) {
+        this.nama_lpd = nama_lpd;
     }
 
     public String getId_transaksi() {
@@ -91,6 +100,7 @@ public class Transaksi implements Parcelable {
         dest.writeString(this.nama) ;
         dest.writeString(this.tanggal) ;
         dest.writeString(this.link_qrcode) ;
+        dest.writeString(this.nama_lpd) ;
         dest.writeDouble(this.nominal);
 
     }
@@ -103,6 +113,7 @@ public class Transaksi implements Parcelable {
         this.id_user = in.readString();
         this.tanggal = in.readString();
         this.link_qrcode = in.readString();
+        this.nama_lpd = in.readString();
         this.nominal = in.readDouble();
 
     }

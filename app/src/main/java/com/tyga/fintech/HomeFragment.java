@@ -1,12 +1,14 @@
 package com.tyga.fintech;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,6 +53,62 @@ public class HomeFragment extends Fragment {
 
         tokenManager = TokenManager.getInstance(getActivity().getApplicationContext().getSharedPreferences("prefs", MODE_PRIVATE));
 
+        binding.textView17.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), PromoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        binding.ivHistoryHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), HistoryNasabahActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        binding.tvHistoryHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), HistoryNasabahActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        binding.ivMerchantHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), ListMerchantActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        binding.tvMerchantHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), ListMerchantActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        binding.ivTopupHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), TopUpActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        binding.tvTopupHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), TopUpActivity.class);
+                startActivity(intent);
+            }
+        });
+
         getSaldo();
         callApiPromo();
         return rootView;
@@ -63,7 +121,11 @@ public class HomeFragment extends Fragment {
                 .enqueue(new Callback<List<Promo>>() {
                     @Override
                     public void onResponse(Call<List<Promo>> call, Response<List<Promo>> response) {
-                        settingRecyclerView(response.body());
+
+                        if (response.body() != null){
+                            settingRecyclerView(response.body());
+                        }
+
                     }
 
                     @Override
@@ -76,10 +138,13 @@ public class HomeFragment extends Fragment {
     private void settingRecyclerView(List<Promo> promoList){
 
         binding.recyclerViewHome.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        binding.recyclerViewHome.setNestedScrollingEnabled(false);
         PromoAdapter promoAdapter = new PromoAdapter(getContext(), new PromoAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Promo promo) {
-
+                Intent intent = new Intent(getContext(), DetailPromoActivity.class);
+                intent.putExtra("promo", promo);
+                startActivity(intent);
             }
         });
         promoAdapter.setListPromo(promoList);

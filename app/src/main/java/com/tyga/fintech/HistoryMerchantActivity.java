@@ -43,10 +43,10 @@ public class HistoryMerchantActivity extends AppCompatActivity {
 
         tokenManager = TokenManager.getInstance(getSharedPreferences("prefs", MODE_PRIVATE));
         saldoMerchant = findViewById(R.id.saldoHistoryMerchant);
-        callApi(String.valueOf(tokenManager.getToken().getUser().getIDUser()));
+        callApi();
     }
 
-    private void callApi(String idUser){
+    private void callApi(){
         ApiClient.createServiceWithAuth(ApiService.class, tokenManager, this)
                 .getHistoryMerchant()
                 .enqueue(new Callback<List<Transaksi>>() {
@@ -70,14 +70,15 @@ public class HistoryMerchantActivity extends AppCompatActivity {
     }
 
     private void settingRecyclerView(){
+        final double[] total = {0};
         mTransaksiRv = findViewById(R.id.rvHistoryMerchant);
         mTransaksiRv.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         HistoryMerchantAdapter historyMerchantAdapter = new HistoryMerchantAdapter(this, new HistoryMerchantAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Transaksi transaksi) {
-                double total = 0;
-                total += transaksi.getNominal();
-                saldoMerchant.setText(String.valueOf(total));
+
+                total[0] += transaksi.getNominal();
+                saldoMerchant.setText(String.valueOf(total[0]));
             }
         });
         historyMerchantAdapter.setListTransaksi(listTransaksi);

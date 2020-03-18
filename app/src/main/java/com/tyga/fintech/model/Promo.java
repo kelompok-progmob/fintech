@@ -5,25 +5,36 @@ import android.os.Parcelable;
 
 public class Promo implements Parcelable {
 
-    private String id_promo, id_merchant, nama_promo,image_promo, nama,alamat,deskripsi, syarat_penggunaan, tanggal_mulai, tanggal_berakhir, active;
+    private String id_promo, id_merchant, nama_promo,image_promo;
     private double nominal;
+    private String syarat_penggunaan, tanggal_mulai, tanggal_berakhir, active, nama,alamat,deskripsi, nama_lpd;
+
 
     public Promo() {
     }
 
-    public Promo(String id_promo, String id_merchant, String nama_promo, String image_promo, String nama, String alamat, String deskripsi, String syarat_penggunaan, String tanggal_mulai, String tanggal_berakhir, String active, double nominal) {
+    public Promo(String id_promo, String id_merchant, String nama_promo, String image_promo, double nominal, String syarat_penggunaan, String tanggal_mulai, String tanggal_berakhir, String active, String nama, String alamat, String deskripsi, String nama_lpd) {
         this.id_promo = id_promo;
         this.id_merchant = id_merchant;
         this.nama_promo = nama_promo;
         this.image_promo = image_promo;
-        this.nama = nama;
-        this.alamat = alamat;
-        this.deskripsi = deskripsi;
+        this.nominal = nominal;
         this.syarat_penggunaan = syarat_penggunaan;
         this.tanggal_mulai = tanggal_mulai;
         this.tanggal_berakhir = tanggal_berakhir;
         this.active = active;
-        this.nominal = nominal;
+        this.nama = nama;
+        this.alamat = alamat;
+        this.deskripsi = deskripsi;
+        this.nama_lpd = nama_lpd;
+    }
+
+    public String getNama_lpd() {
+        return nama_lpd;
+    }
+
+    public void setNama_lpd(String nama_lpd) {
+        this.nama_lpd = nama_lpd;
     }
 
     public String getNama_promo() {
@@ -132,13 +143,16 @@ public class Promo implements Parcelable {
         dest.writeString(this.id_promo) ;
         dest.writeString(this.id_merchant) ;
         dest.writeString(this.nama_promo) ;
-        dest.writeString(this.nama) ;
-        dest.writeString(this.alamat) ;
-        dest.writeString(this.deskripsi) ;
+        dest.writeString(this.image_promo) ;
+        dest.writeDouble(this.nominal);
         dest.writeString(this.syarat_penggunaan) ;
         dest.writeString(this.tanggal_mulai) ;
         dest.writeString(this.tanggal_berakhir) ;
-        dest.writeString(this.image_promo) ;
+        dest.writeString(this.active) ;
+        dest.writeString(this.nama) ;
+        dest.writeString(this.alamat) ;
+        dest.writeString(this.deskripsi) ;
+        dest.writeString(this.nama_lpd) ;
     }
 
     protected Promo(Parcel in) {
@@ -147,12 +161,15 @@ public class Promo implements Parcelable {
         this.id_merchant = in.readString();
         this.image_promo = in.readString();
         this.nama_promo = in.readString();
-        this.nama = in.readString();
-        this.alamat = in.readString();
-        this.deskripsi = in.readString();
+        this.nominal = in.readDouble();
         this.syarat_penggunaan = in.readString();
         this.tanggal_mulai = in.readString();
         this.tanggal_berakhir = in.readString();
+        this.active = in.readString();
+        this.nama = in.readString();
+        this.alamat = in.readString();
+        this.deskripsi = in.readString();
+        this.nama_lpd = in.readString();
 
     }
     public static final Creator<Promo> CREATOR = new Creator<Promo>() {

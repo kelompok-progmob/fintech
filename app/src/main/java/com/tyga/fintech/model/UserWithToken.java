@@ -6,6 +6,7 @@ import java.util.*;
 
 public class UserWithToken {
     private Nasabah nasabah;
+    private Merchant merchant;
     private String token;
     private User user;
 
@@ -17,4 +18,13 @@ public class UserWithToken {
 
     public User getUser() { return user; }
     public void setUser(User value) { this.user = value; }
+
+    public Merchant getMerchant() {
+        return merchant;
+    }
+
+    public void setMerchant(Merchant merchant) {
+        this.merchant = merchant;
+    }
+
 }

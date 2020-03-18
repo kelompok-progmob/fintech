@@ -72,11 +72,10 @@ public class HistoryNasabahAdapter extends RecyclerView.Adapter<HistoryNasabahAd
 
         public void bind(final Transaksi transaksi, final HistoryNasabahAdapter.OnItemClickListener listener) {
             nama.setText(transaksi.getNama());
-            tanggal.setText(FormatTanggal.formatTanggal(transaksi.getTanggal()));
-            jam.setText(FormatTanggal.formatJam(transaksi.getTanggal()));
-            namaLpd.setText("");
+            tanggal.setText(transaksi.getTanggal());
+            namaLpd.setText(transaksi.getNama_lpd());
             nominal.setText(String.valueOf(transaksi.getNominal()));
-
+            jam.setText("");
             listener.onItemClick(transaksi);
         }
     }
