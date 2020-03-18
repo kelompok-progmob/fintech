@@ -41,7 +41,6 @@ public class MerchantActivity extends AppCompatActivity {
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation_merchant);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
-
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_merchant, new HomeMerchantFragment()).commit();
 
     }
@@ -56,7 +55,7 @@ public class MerchantActivity extends AppCompatActivity {
                     selectedFragment = new HomeMerchantFragment();
                     break;
                 case R.id.nav_scan:
-                    selectedFragment = new ScanFragment();
+                    selectedFragment = new QrGeneratorFragment();
                     break;
                 case R.id.nav_profile:
                     selectedFragment = new ProfileMerchantFragment();
