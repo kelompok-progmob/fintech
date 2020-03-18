@@ -40,7 +40,6 @@ public class QrGeneratorFragment extends Fragment {
                     Intent intent = new Intent(getContext(),QRGeneratorActivity.class);
                     intent.putExtra("nominal",binding.nominalTopUp.getText().toString());
                     startActivity(intent);
-                    getActivity().finish();
                 }
             }
         });

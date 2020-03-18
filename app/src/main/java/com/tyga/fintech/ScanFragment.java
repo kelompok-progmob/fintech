@@ -2,7 +2,9 @@ package com.tyga.fintech;
 
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 
@@ -13,6 +15,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -47,7 +50,8 @@ public class ScanFragment extends Fragment {
     View rootView;
     FragmentScanBinding binding;
     private TokenManager tokenManager;
-
+    private ProgressDialog dialog;
+    Double saldo;
     public ScanFragment() {
         // Required empty public constructor
     }
@@ -60,6 +64,13 @@ public class ScanFragment extends Fragment {
         rootView = binding.getRoot();
 
         tokenManager = TokenManager.getInstance(getActivity().getApplicationContext().getSharedPreferences("prefs", MODE_PRIVATE));
+        final SharedPreferences preferences = getContext().getSharedPreferences("prefs",MODE_PRIVATE);
+        if (preferences.contains("saldo_topup")){
+            saldo = Double.parseDouble(preferences.getString("saldo_topup",null));
+        }
+        else{
+            saldo = 0.0;
+        }
 
         mCodeScanner = new CodeScanner(getContext(), binding.scannerView);
         mCodeScanner.setDecodeCallback(new DecodeCallback() {
@@ -68,13 +79,24 @@ public class ScanFragment extends Fragment {
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(getContext(), result.getText(), Toast.LENGTH_SHORT).show();
-                        String[] data = result.getText().split("#");
+                        dialog = ProgressDialog.show(getContext(), "",
+                                "Proses. Please wait...", true);
+                        dialog.setCanceledOnTouchOutside(false);
+                        String[] data = result.getText().split("&");
                         Log.e("data" , data.toString());
                         Log.e("data",String.valueOf(data.length));
                         String id_merchant = data[1];
                         String nominal = data[0];
-                        insertTransaction(id_merchant,nominal);
+                        Double nominalInt = Double.parseDouble(data[0]);
+                        if (saldo < nominalInt){
+                            Toast.makeText(getContext(), "Saldo anda kurang, silakan melakukan topup terlebih dahulu", Toast.LENGTH_SHORT).show();
+                            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ScanFragment()).commit();
+                            dialog.dismiss();
+                        }
+                        else{
+                            insertTransaction(id_merchant,nominal);
+                        }
+
                     }
                 });
             }
@@ -92,21 +114,27 @@ public class ScanFragment extends Fragment {
         return rootView;
     }
 
-    private void insertTransaction(String id_merchant, String nominal){
+    private void insertTransaction(String id_merchant, final String nominal){
         ApiClient.createServiceWithAuth(ApiService.class, tokenManager, getContext())
                 .insertTransaksi(nominal,id_merchant)
                 .enqueue(new Callback<ResponseMessage>() {
                     @Override
                     public void onResponse(Call<ResponseMessage> call, Response<ResponseMessage> response) {
-                        if (response.body().getBerhasil().equals("berhasil")){
-                            Intent intent = new Intent(getContext(),HistoryNasabahActivity.class);
-                            startActivity(intent);
-                        }
+                        Double nominalInt = Double.parseDouble(nominal);
+                        saldo -= nominalInt;
+                        SharedPreferences preferences = getContext().getSharedPreferences("prefs",MODE_PRIVATE);
+                        SharedPreferences.Editor editor = preferences.edit();
+                        editor.putString("saldo_topup",saldo.toString());
+                        editor.apply();
+                        dialog.dismiss();
+                        Intent intent = new Intent(getContext(),HistoryNasabahActivity.class);
+                        startActivity(intent);
                     }
 
                     @Override
                     public void onFailure(Call<ResponseMessage> call, Throwable t) {
-
+                        Toast.makeText(getContext(), "Failed Topup Check your connection", Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
                     }
                 });
     }
@@ -118,12 +146,7 @@ public class ScanFragment extends Fragment {
         if (requestCode == 0) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED
                     && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
-                Fragment frg = null;
-                frg = getActivity().getSupportFragmentManager().findFragmentById(R.id.scan_fragment);
-                final FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-                ft.detach(frg);
-                ft.attach(frg);
-                ft.commit();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ScanFragment()).commit();
                 mCodeScanner.startPreview();
             }
         }

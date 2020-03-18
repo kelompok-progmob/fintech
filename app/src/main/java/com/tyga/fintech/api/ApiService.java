@@ -44,9 +44,14 @@ public interface ApiService {
     @GET("get-saldo-nasabah")
     Call<List<MappingUser>> getSaldoNasabah();
 
+    @FormUrlEncoded
     @POST("insert-transaksi")
     Call<ResponseMessage> insertTransaksi(@Field("nominal") String nominal,
                                           @Field("id_merchant") String idMerchant);
+
+    @FormUrlEncoded
+    @POST("topup-saldo")
+    Call<ResponseMessage> TopupSaldo(@Field("nominal") String nominal);
 
     @POST("refresh")
     @FormUrlEncoded

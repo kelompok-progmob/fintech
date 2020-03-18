@@ -28,6 +28,7 @@ public class TokenManager {
     public void saveToken(UserWithToken token){
         editor.putString("ACCESS_TOKEN", token.getToken()).commit();
         editor.putString("REFRESH_TOKEN", token.getToken()).commit();
+        editor.apply();
     }
 
     public void saveUser(UserWithToken token){
@@ -35,6 +36,7 @@ public class TokenManager {
         editor.putString("NO_HP", String.valueOf(token.getUser().getNoHP())).commit();
         editor.putString("PASSWORD", String.valueOf(token.getUser().getPassword())).commit();
         editor.putString("ROLE", String.valueOf(token.getUser().getRole())).commit();
+        editor.apply();
     }
 
     public void saveNasabah(UserWithToken token){
@@ -42,6 +44,7 @@ public class TokenManager {
         editor.putString("ID_NASABAH", String.valueOf(token.getNasabah().getIDNasabah())).commit();
         editor.putString("NAMA", String.valueOf(token.getNasabah().getNama())).commit();
         editor.putString("NIK", String.valueOf(token.getNasabah().getNik())).commit();
+        editor.apply();
     }
 
     public void saveMerchant(UserWithToken token){
@@ -50,6 +53,7 @@ public class TokenManager {
         editor.putString("NAMA", String.valueOf(token.getMerchant().getNama())).commit();
         editor.putString("ALAMAT", String.valueOf(token.getMerchant().getAlamat())).commit();
         editor.putString("DESKRIPSI", String.valueOf(token.getMerchant().getDeskripsi())).commit();
+        editor.apply();
     }
 
     public void deleteToken(){

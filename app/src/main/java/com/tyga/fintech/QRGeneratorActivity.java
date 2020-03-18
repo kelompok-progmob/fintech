@@ -3,11 +3,13 @@ package com.tyga.fintech;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.view.Display;
+import android.view.View;
 import android.view.WindowManager;
 
 import com.tyga.fintech.api.TokenManager;
@@ -31,6 +33,15 @@ public class QRGeneratorActivity extends AppCompatActivity {
         value = getIntent().getStringExtra("nominal");
         tokenManager = TokenManager.getInstance(getSharedPreferences("prefs", MODE_PRIVATE));
 
+        binding.qrResultBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(QRGeneratorActivity.this,MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         WindowManager manager = (WindowManager) getSystemService(WINDOW_SERVICE);
         Display display = manager.getDefaultDisplay();
         Point point = new Point();
@@ -40,7 +51,7 @@ public class QRGeneratorActivity extends AppCompatActivity {
         int smallerDimension = width < height ? width : height;
         smallerDimension = smallerDimension * 3 / 4;
 
-        String link = value+"#"+tokenManager.getMerchant().getMerchant().getId_merchant();
+        String link = value+"&"+tokenManager.getMerchant().getMerchant().getId_merchant();
 
         qrgEncoder = new QRGEncoder(
                 link, null,

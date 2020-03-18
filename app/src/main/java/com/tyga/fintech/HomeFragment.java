@@ -2,12 +2,14 @@ package com.tyga.fintech;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -108,8 +110,15 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
+        SharedPreferences preferences = getContext().getSharedPreferences("prefs",MODE_PRIVATE);
 
-        getSaldo();
+        if (preferences.contains("saldo_topup")){
+            binding.tvNominalsaldoHome.setText(preferences.getString("saldo_topup",null));
+        }
+        else{
+            getSaldo();
+        }
+
         callApiPromo();
         return rootView;
 
@@ -158,6 +167,10 @@ public class HomeFragment extends Fragment {
                     @Override
                     public void onResponse(Call<List<MappingUser>> call, Response<List<MappingUser>> response) {
                         if (response.body() != null){
+                            SharedPreferences preferences = getContext().getSharedPreferences("prefs",MODE_PRIVATE);
+                            SharedPreferences.Editor editor = preferences.edit();
+                            editor.putString("saldo_topup",String.valueOf(response.body().get(0).getTotal_saldo_topup()));
+                            editor.apply();
                             binding.tvNominalsaldoHome.setText(String.valueOf(response.body().get(0).getTotal_saldo_topup()));
                         }
                         else{
