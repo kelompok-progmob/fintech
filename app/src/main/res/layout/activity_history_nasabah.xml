@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView android:layout_width="match_parent"
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <RelativeLayout
@@ -98,4 +100,4 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </RelativeLayout>
-</ScrollView>
+</androidx.core.widget.NestedScrollView>

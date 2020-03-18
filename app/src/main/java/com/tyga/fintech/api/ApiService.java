@@ -3,6 +3,7 @@ package com.tyga.fintech.api;
 import com.tyga.fintech.model.Lpd;
 import com.tyga.fintech.model.MappingUser;
 import com.tyga.fintech.model.Nasabah;
+import com.tyga.fintech.model.ResponseMessage;
 import com.tyga.fintech.model.UserWithToken;
 import com.tyga.fintech.model.Merchant;
 import com.tyga.fintech.model.Promo;
@@ -42,6 +43,10 @@ public interface ApiService {
 
     @GET("get-saldo-nasabah")
     Call<List<MappingUser>> getSaldoNasabah();
+
+    @POST("insert-transaksi")
+    Call<ResponseMessage> insertTransaksi(@Field("nominal") String nominal,
+                                          @Field("id_merchant") String idMerchant);
 
     @POST("refresh")
     @FormUrlEncoded

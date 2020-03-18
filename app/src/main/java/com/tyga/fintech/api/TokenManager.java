@@ -55,12 +55,6 @@ public class TokenManager {
     public void deleteToken(){
         editor.remove("ACCESS_TOKEN").commit();
         editor.remove("REFRESH_TOKEN").commit();
-        editor.remove("ID_MERCHANT").commit();
-        editor.remove("NAMA").commit();
-        editor.remove("ALAMAT").commit();
-        editor.remove("DESKRIPSI").commit();
-        editor.remove("NIK").commit();
-        editor.remove("ID_NASABAH").commit();
         editor.remove("NO_HP").commit();
     }
 

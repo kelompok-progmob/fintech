@@ -48,6 +48,7 @@ public class HistoryMerchantActivity extends AppCompatActivity {
 
     private void callApi(){
         ApiClient.createServiceWithAuth(ApiService.class, tokenManager, this)
+
                 .getHistoryMerchant()
                 .enqueue(new Callback<List<Transaksi>>() {
                     @Override
