@@ -18,7 +18,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         assert getSupportActionBar() != null;   //null check
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);   //show back button
-        getSupportActionBar().setTitle("Join UANG");
+        getSupportActionBar().setTitle("Registrasi Nasabah");
     }
 
     @Override

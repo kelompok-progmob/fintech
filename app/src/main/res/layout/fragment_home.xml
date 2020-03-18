@@ -132,7 +132,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginBottom="16dp"
-                android:text="90.000"
+                android:text="Loading data..."
                 android:textColor="@color/colorTextWhite"
                 android:textSize="35sp"
                 android:textStyle="bold"

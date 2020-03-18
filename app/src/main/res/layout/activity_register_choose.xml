@@ -27,7 +27,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         app:cardCornerRadius="20px"
-        app:layout_constraintEnd_toStartOf="@+id/cardView3"
+        app:layout_constraintEnd_toStartOf="@+id/cv_merchant_regcho"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_registersebgai_registerchoose">
 
@@ -63,7 +63,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView3"
+        android:id="@+id/cv_merchant_regcho"
         android:layout_width="0dp"
         android:layout_height="220dp"
         android:layout_marginStart="8dp"
