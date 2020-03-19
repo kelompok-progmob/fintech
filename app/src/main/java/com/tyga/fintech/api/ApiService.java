@@ -60,7 +60,7 @@ public interface ApiService {
     Call<ResponseMessage> TopupSaldo(@Field("nominal") String nominal);
 
     @FormUrlEncoded
-    @POST("store-register")
+    @POST("register-nasabah")
     Call<ResponseMessage> register(@Field("nik") String nik,
                                    @Field("nama") String nama,
                                    @Field("no_hp") String no_hp,
