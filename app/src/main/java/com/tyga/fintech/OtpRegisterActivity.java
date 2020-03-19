@@ -197,6 +197,7 @@ public class OtpRegisterActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<ResponseMessage> call, Response<ResponseMessage> response) {
 //                        progressDialogVerifiying.dismiss();
+                        Toast.makeText(OtpRegisterActivity.this,"Register Berhasil",Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(OtpRegisterActivity.this, LoginActivity.class);
                         startActivity(intent);
                         finish();
