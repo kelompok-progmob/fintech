@@ -44,6 +44,12 @@ public interface ApiService {
     @GET("get-saldo-nasabah")
     Call<List<MappingUser>> getSaldoNasabah();
 
+    @GET("check-phone")
+    Call<ResponseMessage> checkPhone(@Query("no_hp") String no_hp);
+
+    @GET("all-lpd")
+    Call<List<Lpd>> allLpd();
+
     @FormUrlEncoded
     @POST("insert-transaksi")
     Call<ResponseMessage> insertTransaksi(@Field("nominal") String nominal,
@@ -52,6 +58,14 @@ public interface ApiService {
     @FormUrlEncoded
     @POST("topup-saldo")
     Call<ResponseMessage> TopupSaldo(@Field("nominal") String nominal);
+
+    @FormUrlEncoded
+    @POST("store-register")
+    Call<ResponseMessage> register(@Field("nik") String nik,
+                                   @Field("nama") String nama,
+                                   @Field("no_hp") String no_hp,
+                                   @Field("password") String password,
+                                   @Field("id_lpd") String lpd);
 
     @POST("refresh")
     @FormUrlEncoded

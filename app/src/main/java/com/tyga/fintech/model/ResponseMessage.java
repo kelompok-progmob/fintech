@@ -2,11 +2,11 @@ package com.tyga.fintech.model;
 
 public class ResponseMessage {
 
-    private String success,berhasil;
+    private String success,message;
 
-    public ResponseMessage(String success, String berhasil) {
+    public ResponseMessage(String success, String message) {
         this.success = success;
-        this.berhasil = berhasil;
+        this.message = message;
     }
 
     public String getSuccess() {
@@ -17,11 +17,11 @@ public class ResponseMessage {
         this.success = success;
     }
 
-    public String getBerhasil() {
-        return berhasil;
+    public String getMessage() {
+        return message;
     }
 
-    public void setBerhasil(String berhasil) {
-        this.berhasil = berhasil;
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

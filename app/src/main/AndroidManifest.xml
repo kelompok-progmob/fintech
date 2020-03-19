@@ -5,8 +5,8 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -14,8 +14,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        tools:replace="android:icon"
-        android:theme="@style/NoActionBar">
+        android:theme="@style/NoActionBar"
+        tools:replace="android:icon">
+        <activity android:name=".OtpRegisterMerchantActivity"></activity>
+        <activity android:name=".OtpRegisterActivity" />
         <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,25 +35,15 @@
         <activity
             android:name=".RegisterActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".LoginActivity">
-
-        </activity>
+        <activity android:name=".LoginActivity" />
         <activity android:name=".TopUpActivity" />
-        <activity android:name=".MerchantActivity">
-
-        </activity>
+        <activity android:name=".MerchantActivity" />
         <activity android:name=".QRGeneratorActivity" />
-        <activity android:name=".MainActivity">
-
-        </activity>
-        <activity android:name=".ProfileActivity"></activity>
-        <activity android:name=".DetailPromoActivity" >
-
-        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".DetailPromoActivity" />
         <activity android:name=".PromoActivity" />
-        <activity android:name=".DetailMerchantActivity" >
-
-        </activity>
+        <activity android:name=".DetailMerchantActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
