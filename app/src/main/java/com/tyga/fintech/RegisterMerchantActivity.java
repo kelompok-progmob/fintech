@@ -11,9 +11,7 @@ public class RegisterMerchantActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_merchant);
 
-        assert getSupportActionBar() != null;   //null check
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);   //show back button
-        getSupportActionBar().setTitle("Registrasi Merchant");
+
     }
 
     @Override
