@@ -36,7 +36,7 @@ public class QRGeneratorActivity extends AppCompatActivity {
         binding.qrResultBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(QRGeneratorActivity.this,MainActivity.class);
+                Intent intent = new Intent(QRGeneratorActivity.this,MerchantActivity.class);
                 startActivity(intent);
                 finish();
             }

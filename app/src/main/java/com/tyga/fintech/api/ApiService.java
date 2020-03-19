@@ -71,7 +71,7 @@ public interface ApiService {
     @FormUrlEncoded
     Call<UserWithToken> refresh(@Field("refresh_token") String refreshToken);
 
-    @POST("login")
+    @POST("login-user")
     @FormUrlEncoded
     Call<UserWithToken> login(@Field("no_hp") String noHp, @Field("password") String password);
 
