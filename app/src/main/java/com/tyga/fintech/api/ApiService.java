@@ -8,6 +8,7 @@ import com.tyga.fintech.model.UserWithToken;
 import com.tyga.fintech.model.Merchant;
 import com.tyga.fintech.model.Promo;
 import com.tyga.fintech.model.Transaksi;
+import com.tyga.fintech.model.ValidasiTransaksi;
 
 import java.util.List;
 
@@ -60,12 +61,24 @@ public interface ApiService {
     Call<ResponseMessage> TopupSaldo(@Field("nominal") String nominal);
 
     @FormUrlEncoded
-    @POST("register-nasabah")
+    @POST("register")
     Call<ResponseMessage> register(@Field("nik") String nik,
                                    @Field("nama") String nama,
                                    @Field("no_hp") String no_hp,
                                    @Field("password") String password,
-                                   @Field("id_lpd") String lpd);
+                                   @Field("id_lpd") String lpd,
+                                   @Field("role") String role
+                                   );
+
+    @FormUrlEncoded
+    @POST("register")
+    Call<ResponseMessage> registerMerchant(@Field("alamat") String alamat,
+                                   @Field("nama") String nama,
+                                   @Field("no_hp") String no_hp,
+                                   @Field("password") String password,
+                                   @Field("id_lpd") String lpd,
+                                   @Field("role") String role
+    );
 
     @POST("refresh")
     @FormUrlEncoded
@@ -74,5 +87,18 @@ public interface ApiService {
     @POST("login-user")
     @FormUrlEncoded
     Call<UserWithToken> login(@Field("no_hp") String noHp, @Field("password") String password);
+
+    @GET("get-pendapatan-today")
+    Call<Double> getPendapatanToday();
+
+    @GET("get-transaksi-today")
+    Call<Integer> getTransaksiToday();
+
+    @GET("get-points")
+    Call<Integer> getPoints();
+
+    @FormUrlEncoded
+    @POST("get-validasi-transaksi")
+    Call<ValidasiTransaksi> getValidasiTransaksi(@Field("id_merchant") String idMerchant, @Field("nominal") String nominal);
 
 }

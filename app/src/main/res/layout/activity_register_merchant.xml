@@ -26,10 +26,10 @@
                     android:layout_marginTop="32dp"
                     android:text="Nama Merchant"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_thanks_register" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:id="@+id/et_nama_merchant_register"
+                    android:id="@+id/nama"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
@@ -48,10 +48,10 @@
                     android:layout_marginTop="16dp"
                     android:text="Alamat"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/et_nama_merchant_register" />
+                    app:layout_constraintTop_toBottomOf="@+id/nama" />
 
                 <EditText
-                    android:id="@+id/et_alamat_register"
+                    android:id="@+id/alamat"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
@@ -70,10 +70,10 @@
                     android:layout_marginTop="16dp"
                     android:text="Nomor Ponsel"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/et_alamat_register" />
+                    app:layout_constraintTop_toBottomOf="@+id/alamat" />
 
                 <EditText
-                    android:id="@+id/et_noHp_merchant_register"
+                    android:id="@+id/nohp"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
@@ -92,10 +92,10 @@
                     android:layout_marginTop="16dp"
                     android:text="Nomor Pin"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/et_noHp_merchant_register" />
+                    app:layout_constraintTop_toBottomOf="@+id/nohp" />
 
                 <EditText
-                    android:id="@+id/et_pin_merchant_register"
+                    android:id="@+id/pin"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
@@ -106,18 +106,18 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_pin_merchant_register" />
 
-                <TextView
-                    android:id="@+id/tv_thanks_register"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="24dp"
-                    android:text="Terima kasih telah bergabung! kami akan mengirim kode melalui SMS untuk verifikasi proses registrasi"
-                    android:textColor="#000000"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_thanks_register"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="24dp"-->
+<!--                    android:layout_marginTop="16dp"-->
+<!--                    android:layout_marginEnd="24dp"-->
+<!--                    android:text="Terima kasih telah bergabung! kami akan mengirim kode melalui SMS untuk verifikasi proses registrasi"-->
+<!--                    android:textColor="#000000"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent" />-->
 
                 <CheckBox
                     android:id="@+id/checkBox_register"
@@ -156,7 +156,7 @@
                     android:layout_marginTop="16dp"
                     android:text="Pilih LPD / Koperasi"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/et_pin_merchant_register" />
+                    app:layout_constraintTop_toBottomOf="@+id/pin" />
 
                 <Spinner
                     android:id="@+id/spinner_merchant_register"

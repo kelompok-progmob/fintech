@@ -21,6 +21,7 @@ import com.tyga.fintech.api.ApiService;
 import com.tyga.fintech.api.TokenManager;
 import com.tyga.fintech.databinding.FragmentHomeBinding;
 import com.tyga.fintech.model.MappingUser;
+import com.tyga.fintech.model.Merchant;
 import com.tyga.fintech.model.Promo;
 
 import java.util.List;
@@ -112,16 +113,34 @@ public class HomeFragment extends Fragment {
         });
         SharedPreferences preferences = getContext().getSharedPreferences("prefs",MODE_PRIVATE);
 
-        if (preferences.contains("saldo_topup")){
-            binding.tvNominalsaldoHome.setText(preferences.getString("saldo_topup",null));
-        }
-        else{
-            getSaldo();
-        }
+        getSaldo();
+
+        getPoints();
 
         callApiPromo();
         return rootView;
 
+    }
+
+    private void getPoints(){
+        ApiClient.createServiceWithAuth(ApiService.class, tokenManager, getContext())
+                .getPoints()
+                .enqueue(new Callback<Integer>() {
+                    @Override
+                    public void onResponse(Call<Integer> call, Response<Integer> response) {
+                        if (response.body() != null){
+                            binding.tbTotalPoints.setText(String.valueOf(response.body())+" Total Points");
+                        }
+                        else{
+                            binding.tbTotalPoints.setText("0 Total Points");
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<Integer> call, Throwable t) {
+
+                    }
+                });
     }
 
     private void callApiPromo(){

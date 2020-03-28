@@ -192,7 +192,7 @@ public class OtpRegisterActivity extends AppCompatActivity {
 
     private void insertRegister(){
         ApiClient.createService(ApiService.class)
-                .register(nik, nama, no_hp, password, lpd)
+                .register(nik, nama, no_hp, password, lpd, "1")
                 .enqueue(new Callback<ResponseMessage>() {
                     @Override
                     public void onResponse(Call<ResponseMessage> call, Response<ResponseMessage> response) {

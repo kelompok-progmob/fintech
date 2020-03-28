@@ -16,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/NoActionBar"
         tools:replace="android:icon">
-        <activity android:name=".OtpRegisterMerchantActivity"></activity>
+        <activity android:name=".ValidasiTransaksiActivity"></activity>
+        <activity android:name=".OtpRegisterMerchantActivity" />
         <activity android:name=".OtpRegisterActivity" />
         <activity android:name=".SplashScreenActivity">
             <intent-filter>

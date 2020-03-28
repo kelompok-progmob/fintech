@@ -87,14 +87,21 @@ public class ScanFragment extends Fragment {
                         Log.e("data",String.valueOf(data.length));
                         String id_merchant = data[1];
                         String nominal = data[0];
-                        Double nominalInt = Double.parseDouble(data[0]);
-                        if (saldo < nominalInt){
+                        Double nominalDouble = Double.parseDouble(data[0]);
+                        if (saldo < nominalDouble){
                             Toast.makeText(getContext(), "Saldo anda kurang, silakan melakukan topup terlebih dahulu", Toast.LENGTH_SHORT).show();
                             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ScanFragment()).commit();
                             dialog.dismiss();
                         }
                         else{
-                            insertTransaction(id_merchant,nominal);
+                            Intent intent = new Intent(getActivity(),ValidasiTransaksiActivity.class);
+                            Bundle extras = new Bundle();
+                            extras.putString("id_merchant",id_merchant);
+                            extras.putString("nominal",nominal);
+                            intent.putExtras(extras);
+                            startActivity(intent);
+
+//                            insertTransaction(id_merchant,nominal);
                         }
 
                     }
@@ -120,8 +127,8 @@ public class ScanFragment extends Fragment {
                 .enqueue(new Callback<ResponseMessage>() {
                     @Override
                     public void onResponse(Call<ResponseMessage> call, Response<ResponseMessage> response) {
-                        Double nominalInt = Double.parseDouble(nominal);
-                        saldo -= nominalInt;
+                        Double nominalDouble = Double.parseDouble(nominal);
+                        saldo -= nominalDouble;
                         SharedPreferences preferences = getContext().getSharedPreferences("prefs",MODE_PRIVATE);
                         SharedPreferences.Editor editor = preferences.edit();
                         editor.putString("saldo_topup",saldo.toString());

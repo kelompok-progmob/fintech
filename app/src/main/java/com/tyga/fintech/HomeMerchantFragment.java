@@ -47,6 +47,9 @@ public class HomeMerchantFragment extends Fragment {
 
         binding.namaHomeMerchant.setText(tokenManager.getMerchant().getMerchant().getNama());
         getSaldo();
+        getPendapatanToday();
+        getTransaksiToday();
+
         return rootView;
     }
 
@@ -71,8 +74,46 @@ public class HomeMerchantFragment extends Fragment {
                 });
     }
 
-    private void getTransaksi(){
+    private void getPendapatanToday(){
+        ApiClient.createServiceWithAuth(ApiService.class, tokenManager, getContext())
+                .getPendapatanToday()
+                .enqueue(new Callback<Double>() {
+                    @Override
+                    public void onResponse(Call<Double> call, Response<Double> response) {
+                        if (response.body() != null){
+                            binding.pendapatanHomeMerchant.setText(String.valueOf(response.body()));
+                        }
+                        else{
+                            binding.pendapatanHomeMerchant.setText("0");
+                        }
+                    }
 
+                    @Override
+                    public void onFailure(Call<Double> call, Throwable t) {
+
+                    }
+                });
+    }
+
+    private void getTransaksiToday(){
+        ApiClient.createServiceWithAuth(ApiService.class, tokenManager, getContext())
+                .getTransaksiToday()
+                .enqueue(new Callback<Integer>() {
+                    @Override
+                    public void onResponse(Call<Integer> call, Response<Integer> response) {
+                        if (response.body() != null){
+                            binding.jumlahHomeMerchant.setText(String.valueOf(response.body()));
+                        }
+                        else{
+                            binding.jumlahHomeMerchant.setText("0");
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<Integer> call, Throwable t) {
+
+                    }
+                });
     }
 
 }
